@@ -8,7 +8,7 @@ bool ListaDePrioridade::adicionar_paciente(Paciente &paciente) {
 
     std::_List_iterator<Paciente> it = _pacientes.begin();
     for(it; it != _pacientes.end(); ++it) {
-        if(paciente._cor < it->_cor) {
+        if(paciente.get_cor() < it->get_cor()) {
             _pacientes.insert(it, paciente);
             return true;
         }
@@ -25,7 +25,7 @@ bool ListaDePrioridade::adicionar_paciente(Paciente &paciente) {
 std::_List_iterator<Paciente> ListaDePrioridade::procurar_paciente(std::string &nome) {
     std::_List_iterator<Paciente> it = _pacientes.begin();
     for(it; it != _pacientes.end(); ++it) {
-        if(it->_nome == nome) return it;
+        if(it->get_nome() == nome) return it;
     }
     return it;
 }

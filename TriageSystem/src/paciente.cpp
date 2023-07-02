@@ -24,6 +24,26 @@ void Paciente::imprimir_paciente() const {
         std::cout << "Cor: " << _cor << std::endl;
     }
 
+std::string Paciente::get_nome() const {
+    return _nome;
+}
+
+unsigned Paciente::get_cor() const {
+    return _cor;
+}
+
 void Paciente::editar_dados_paciente(unsigned &cor) {
     _cor = cor;
+}
+
+const char *NomeInvalido::what() const noexcept {
+    return "Nome inválido!";
+}
+
+const char *CpfInvalido::what() const noexcept {
+    return "CPF inválido!";
+}
+
+const char *ConvenioInvalido::what() const noexcept {
+    return "Convênio inválido!";
 }
