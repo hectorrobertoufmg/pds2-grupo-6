@@ -1,4 +1,5 @@
 #include "lista.hpp"
+#include <sstream>
 #include <unistd.h>
 
 int main() {
@@ -18,7 +19,8 @@ int main() {
 
                 while(true) {
                     std::cout << "Nome: ";
-                    std::cin >> nome;
+                    std::cin.ignore();
+                    std::getline(std::cin, nome);
                     if(!sem_numeros(nome)) {
                         std::cout << "Nome inválido, tente novamente." << std::endl;
                         sleep(1);
@@ -27,10 +29,12 @@ int main() {
                     break;
                 }
                 std::cout << "Idade: ";
+                std::cin.ignore();
                 std::cin >> idade;
                 while(true) {
                     std::cout << "CPF: ";
-                    std::cin >> cpf;
+                    std::cin.ignore();
+                    std::getline(std::cin, cpf);
                     if(!apenas_numeros(cpf) || cpf.size() != 11) {
                         std::cout << "CPF inválido, tente novamente." << std::endl;
                         sleep(1);
@@ -40,7 +44,8 @@ int main() {
                 }
                 while(true) {
                     std::cout << "Convênio: ";
-                    std::cin >> convenio;
+                    std::cin.ignore();
+                    std::getline(std::cin, convenio);
                     if(!sem_numeros(convenio)) {
                         std::cout << "Convênio inválido, tente novamente." << std::endl;
                         sleep(1);
@@ -61,7 +66,8 @@ int main() {
                 std::_List_iterator<Paciente> paciente;
                 while(true) {
                     std::cout << "Nome: ";
-                    std::cin >> nome;
+                    std::cin.ignore();
+                    std::getline(std::cin, nome);
                     if(!sem_numeros(nome)) {
                         std::cout << "Nome inválido, tente novamente." << std::endl;
                         sleep(1);
@@ -96,7 +102,8 @@ int main() {
                 std::_List_iterator<Paciente> paciente;
                 while(true) {
                     std::cout << "Nome: ";
-                    std::cin >> nome;
+                    std::cin.ignore();
+                    std::getline(std::cin, nome);
                     if(!sem_numeros(nome)) {
                         std::cout << "Nome inválido, tente novamente." << std::endl;
                         sleep(1);
@@ -121,7 +128,8 @@ int main() {
                 std::_List_iterator<Paciente> paciente;
                 while(true) {
                     std::cout << "Nome: ";
-                    std::cin >> nome;
+                    std::cin.ignore();
+                    std::getline(std::cin, nome);
                     if(!sem_numeros(nome)) {
                         std::cout << "Nome inválido, tente novamente." << std::endl;
                         sleep(1);
