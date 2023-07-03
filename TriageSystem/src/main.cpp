@@ -92,7 +92,7 @@ int main() {
                         break;
                     }
                     std::cout << "Cor: ";
-                    while(!(std::cin >> cor) && cor > 4) {                       
+                    while(!(std::cin >> cor) || cor > 4) {                       
                         std::cout << "Cor inválida, tente novamente." << std::endl;
                         limpar_buffer(limpo);
                     }
