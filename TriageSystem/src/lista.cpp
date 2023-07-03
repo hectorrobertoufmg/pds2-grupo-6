@@ -23,6 +23,8 @@ bool ListaDePrioridade::adicionar_paciente(Paciente &paciente) {
 }
 
 std::_List_iterator<Paciente> ListaDePrioridade::procurar_paciente(std::string &nome) {
+    if(_pacientes.empty()) throw ListaVazia();
+
     std::_List_iterator<Paciente> it = _pacientes.begin();
     for(it; it != _pacientes.end(); ++it) {
         if(it->get_nome() == nome) return it;
@@ -31,6 +33,8 @@ std::_List_iterator<Paciente> ListaDePrioridade::procurar_paciente(std::string &
 }
 
 bool ListaDePrioridade::remover_paciente(std::_List_iterator<Paciente> &posicao) {
+    if(_pacientes.empty()) throw ListaVazia();
+
     if(posicao != _pacientes.end()) {
         _pacientes.erase(posicao);
         return true;
@@ -39,12 +43,16 @@ bool ListaDePrioridade::remover_paciente(std::_List_iterator<Paciente> &posicao)
 }
 
 void ListaDePrioridade::ordenar_paciente(std::_List_iterator<Paciente> &posicao) {
+    if(_pacientes.empty()) throw ListaVazia();
+
     Paciente paciente = *posicao;
     _pacientes.erase(posicao);
     ListaDePrioridade::adicionar_paciente(paciente);
 }
 
 void ListaDePrioridade::exibir_lista() const {
+    if(_pacientes.empty()) throw ListaVazia();
+    
     for(std::_List_const_iterator<Paciente> it = _pacientes.begin(); it != _pacientes.end(); ++it) {
         it->imprimir_paciente();
     }
@@ -52,4 +60,8 @@ void ListaDePrioridade::exibir_lista() const {
 
 std::_List_iterator<Paciente> ListaDePrioridade::fim_lista() {
     return _pacientes.end();
+}
+
+const char *ListaVazia::what() const noexcept {
+    return "A lista está vazia!";
 }

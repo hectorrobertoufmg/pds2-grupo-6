@@ -15,3 +15,8 @@ bool apenas_numeros(std::string &string) {
 
     return true;
 }
+
+void limpar_buffer() {
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}

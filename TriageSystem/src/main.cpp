@@ -5,12 +5,17 @@
 int main() {
     ListaDePrioridade lista;
     bool exit = false;
+    bool limpo = true;
     while(!exit) {
         unsigned entrada;
         std::cout << "1: Cadastrar paciente         2: Avaliar/reavaliar paciente         3: Ver dados do Paciente" << std::endl
         << "4: Remover paciente         5: Atribuir paciente ao médico         6: Sair" << std::endl << std::endl
         << "Digite o número da operação desejada: ";
-        std::cin >> entrada;
+        while(!(std::cin >> entrada)) {
+            std::cout << "Entrada inválida! Digite o número da operação desejada." << std::endl;
+            limpar_buffer();
+        }
+        limpo = false;
         switch(entrada) {
             case 1:
             {
@@ -19,24 +24,29 @@ int main() {
 
                 while(true) {
                     std::cout << "Nome: ";
-                    std::cin.ignore();
+                    if(!limpo) limpar_buffer();
                     std::getline(std::cin, nome);
                     if(!sem_numeros(nome)) {
                         std::cout << "Nome inválido, tente novamente." << std::endl;
+                        limpo = true;
                         sleep(1);
                         continue;
                     }
                     break;
                 }
                 std::cout << "Idade: ";
-                std::cin.ignore();
-                std::cin >> idade;
+                while(!(std::cin >> idade)) {
+                    std::cout << "Idade inválida! Digite um número inteiro." << std::endl;
+                    limpar_buffer();
+                }
+                limpo = false;
                 while(true) {
                     std::cout << "CPF: ";
-                    std::cin.ignore();
+                    if(!limpo) limpar_buffer();
                     std::getline(std::cin, cpf);
                     if(!apenas_numeros(cpf) || cpf.size() != 11) {
                         std::cout << "CPF inválido, tente novamente." << std::endl;
+                        limpo = true;
                         sleep(1);
                         continue;
                     }
@@ -44,10 +54,11 @@ int main() {
                 }
                 while(true) {
                     std::cout << "Convênio: ";
-                    std::cin.ignore();
+                    if(!limpo) limpar_buffer();
                     std::getline(std::cin, convenio);
                     if(!sem_numeros(convenio)) {
                         std::cout << "Convênio inválido, tente novamente." << std::endl;
+                        limpo = true;
                         sleep(1);
                         continue;
                     }
@@ -61,92 +72,109 @@ int main() {
             }
             case 2:
             {
-                unsigned cor;
-                std::string nome;
-                std::_List_iterator<Paciente> paciente;
-                while(true) {
-                    std::cout << "Nome: ";
-                    std::cin.ignore();
-                    std::getline(std::cin, nome);
-                    if(!sem_numeros(nome)) {
-                        std::cout << "Nome inválido, tente novamente." << std::endl;
-                        sleep(1);
-                        continue;
+                try {
+                    unsigned cor;
+                    std::string nome;
+                    std::_List_iterator<Paciente> paciente;
+                    while(true) {
+                        std::cout << "Nome: ";
+                        if(!limpo) limpar_buffer();
+                        std::getline(std::cin, nome);
+                        if(!sem_numeros(nome)) {
+                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                            limpo = true;
+                            sleep(1);
+                            continue;
+                        }
+                        paciente = lista.procurar_paciente(nome);
+                        break;
                     }
-                    paciente = lista.procurar_paciente(nome);
+                    if(paciente == lista.fim_lista()) {
+                        std::cout << "O paciente não está cadastrado." << std::endl << std::endl;
+                        sleep(1);
+                        break;
+                    }
+                    std::cout << "Cor: ";
+                    while(!(std::cin >> cor) && cor > 4) {                       
+                        std::cout << "Cor inválida, tente novamente." << std::endl;
+                        limpar_buffer();
+                    }
+                    limpo = false;
+                    paciente->editar_dados_paciente(cor);
+                    std::cout << "Avaliação registrada." << std::endl << std::endl;
+                    sleep(1);
                     break;
-                }
-                if(paciente == lista.fim_lista()) {
-                    std::cout << "O paciente não está cadastrado." << std::endl << std::endl;
+                } catch(const ListaVazia &e) {
+                    std::cout << "A lista de pacientes está vazia." << std::endl << std::endl;
                     sleep(1);
                     break;
                 }
-                while(true) {
-                    std::cout << "Cor: ";
-                    std::cin >> cor;
-                    if(cor > 4) {
-                        std::cout << "Cor inválida, tente novamente." << std::endl;
-                        sleep(1);
-                        continue;
-                    }
-                    paciente->editar_dados_paciente(cor);
-                    break;
-                }
-                std::cout << "Avaliação registrada." << std::endl << std::endl;
-                sleep(1);
-                break;
             }
             case 3:
             {
-                std::string nome;
-                std::_List_iterator<Paciente> paciente;
-                while(true) {
-                    std::cout << "Nome: ";
-                    std::cin.ignore();
-                    std::getline(std::cin, nome);
-                    if(!sem_numeros(nome)) {
-                        std::cout << "Nome inválido, tente novamente." << std::endl;
-                        sleep(1);
-                        continue;
+                try {
+                    std::string nome;
+                    std::_List_iterator<Paciente> paciente;
+                    while(true) {
+                        std::cout << "Nome: ";
+                        if(!limpo) limpar_buffer();
+                        std::getline(std::cin, nome);
+                        if(!sem_numeros(nome)) {
+                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                            limpo = true;
+                            sleep(1);
+                            continue;
+                        }
+                        paciente = lista.procurar_paciente(nome);
+                        break;
                     }
-                    paciente = lista.procurar_paciente(nome);
+                    if(paciente == lista.fim_lista()) {
+                        std::cout << "O paciente não está cadastrado." << std::endl << std::endl;
+                        sleep(1);
+                        break;
+                    }
+                    paciente->imprimir_paciente();
+                    std::cout << std::endl;
+                    sleep(1);
                     break;
-                }
-                if(paciente == lista.fim_lista()) {
-                    std::cout << "O paciente não está cadastrado." << std::endl << std::endl;
+                } catch(const ListaVazia &e) {
+                    std::cout << "A lista de pacientes está vazia." << std::endl << std::endl;
                     sleep(1);
                     break;
                 }
-                paciente->imprimir_paciente();
-                std::cout << std::endl;
-                sleep(1);
-                break;
             }
             case 4:
             {
-                std::string nome;
-                std::_List_iterator<Paciente> paciente;
-                while(true) {
-                    std::cout << "Nome: ";
-                    std::cin.ignore();
-                    std::getline(std::cin, nome);
-                    if(!sem_numeros(nome)) {
-                        std::cout << "Nome inválido, tente novamente." << std::endl;
-                        sleep(1);
-                        continue;
+                try {
+                    std::string nome;
+                    std::_List_iterator<Paciente> paciente;
+                    while(true) {
+                        std::cout << "Nome: ";
+                        if(!limpo) limpar_buffer();
+                        std::getline(std::cin, nome);
+                        if(!sem_numeros(nome)) {
+                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                            limpo = true;
+                            sleep(1);
+                            continue;
+                        }
+                        paciente = lista.procurar_paciente(nome);
+                        break;
                     }
-                    paciente = lista.procurar_paciente(nome);
+                    if(paciente == lista.fim_lista()) {
+                        std::cout << "O paciente não está cadastrado." << std::endl << std::endl;
+                        sleep(1);
+                        break;
+                    }
+                    lista.remover_paciente(paciente);
+                    std::cout << "Paciente removido." << std::endl << std::endl;
+                    sleep(1);
                     break;
-                }
-                if(paciente == lista.fim_lista()) {
-                    std::cout << "O paciente não está cadastrado." << std::endl << std::endl;
+                } catch(const ListaVazia &e) {
+                    std::cout << "A lista de pacientes está vazia." << std::endl << std::endl;
                     sleep(1);
                     break;
                 }
-                lista.remover_paciente(paciente);
-                std::cout << "Paciente removido." << std::endl << std::endl;
-                sleep(1);
-                break;
             }
             case 5:
             {

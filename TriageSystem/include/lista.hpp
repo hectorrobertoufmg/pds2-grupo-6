@@ -4,6 +4,7 @@
 #include <list>
 #include <iostream>
 #include <string>
+#include <exception>
 #include "paciente.hpp"
 
 class ListaDePrioridade {
@@ -17,6 +18,11 @@ public:
 
 private:
     std::list<Paciente> _pacientes;
+};
+
+class ListaVazia : public std::exception {
+public:
+    const char *what() const noexcept override;
 };
 
 #endif
