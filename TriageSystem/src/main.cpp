@@ -13,7 +13,7 @@ int main() {
         << "Digite o número da operação desejada: ";
         while(!(std::cin >> entrada)) {
             std::cout << "Entrada inválida! Digite o número da operação desejada." << std::endl;
-            limpar_buffer();
+            limpar_buffer(limpo);
         }
         limpo = false;
         switch(entrada) {
@@ -24,11 +24,10 @@ int main() {
 
                 while(true) {
                     std::cout << "Nome: ";
-                    if(!limpo) limpar_buffer();
+                    if(!limpo) limpar_buffer(limpo);
                     std::getline(std::cin, nome);
                     if(!sem_numeros(nome)) {
                         std::cout << "Nome inválido, tente novamente." << std::endl;
-                        limpo = true;
                         sleep(1);
                         continue;
                     }
@@ -37,16 +36,15 @@ int main() {
                 std::cout << "Idade: ";
                 while(!(std::cin >> idade)) {
                     std::cout << "Idade inválida! Digite um número inteiro." << std::endl;
-                    limpar_buffer();
+                    limpar_buffer(limpo);
                 }
                 limpo = false;
                 while(true) {
                     std::cout << "CPF: ";
-                    if(!limpo) limpar_buffer();
+                    if(!limpo) limpar_buffer(limpo);
                     std::getline(std::cin, cpf);
                     if(!apenas_numeros(cpf) || cpf.size() != 11) {
                         std::cout << "CPF inválido, tente novamente." << std::endl;
-                        limpo = true;
                         sleep(1);
                         continue;
                     }
@@ -54,11 +52,11 @@ int main() {
                 }
                 while(true) {
                     std::cout << "Convênio: ";
-                    if(!limpo) limpar_buffer();
+                    if(!limpo) limpar_buffer(limpo);
                     std::getline(std::cin, convenio);
                     if(!sem_numeros(convenio)) {
                         std::cout << "Convênio inválido, tente novamente." << std::endl;
-                        limpo = true;
+                        
                         sleep(1);
                         continue;
                     }
@@ -78,11 +76,10 @@ int main() {
                     std::_List_iterator<Paciente> paciente;
                     while(true) {
                         std::cout << "Nome: ";
-                        if(!limpo) limpar_buffer();
+                        if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
                         if(!sem_numeros(nome)) {
                             std::cout << "Nome inválido, tente novamente." << std::endl;
-                            limpo = true;
                             sleep(1);
                             continue;
                         }
@@ -97,7 +94,7 @@ int main() {
                     std::cout << "Cor: ";
                     while(!(std::cin >> cor) && cor > 4) {                       
                         std::cout << "Cor inválida, tente novamente." << std::endl;
-                        limpar_buffer();
+                        limpar_buffer(limpo);
                     }
                     limpo = false;
                     paciente->editar_dados_paciente(cor);
@@ -117,11 +114,10 @@ int main() {
                     std::_List_iterator<Paciente> paciente;
                     while(true) {
                         std::cout << "Nome: ";
-                        if(!limpo) limpar_buffer();
+                        if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
                         if(!sem_numeros(nome)) {
                             std::cout << "Nome inválido, tente novamente." << std::endl;
-                            limpo = true;
                             sleep(1);
                             continue;
                         }
@@ -150,11 +146,10 @@ int main() {
                     std::_List_iterator<Paciente> paciente;
                     while(true) {
                         std::cout << "Nome: ";
-                        if(!limpo) limpar_buffer();
+                        if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
                         if(!sem_numeros(nome)) {
                             std::cout << "Nome inválido, tente novamente." << std::endl;
-                            limpo = true;
                             sleep(1);
                             continue;
                         }
