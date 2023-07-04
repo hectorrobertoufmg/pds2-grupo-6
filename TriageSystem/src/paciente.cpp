@@ -1,5 +1,17 @@
 #include "paciente.hpp"
 
+const char *NomeInvalido::what() const noexcept {
+    return "Nome inválido!";
+}
+
+const char *CpfInvalido::what() const noexcept {
+    return "CPF inválido!";
+}
+
+const char *ConvenioInvalido::what() const noexcept {
+    return "Convênio inválido!";
+}
+
 Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::string &convenio) {
     if(!sem_numeros(nome)) {
         throw NomeInvalido();
