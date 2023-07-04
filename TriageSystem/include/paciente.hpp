@@ -6,6 +6,21 @@
 #include "funcoes.hpp"
 #include "excecao.hpp"
 
+class NomeInvalido : public std::exception {
+public:
+    const char *what() const noexcept override;
+};
+
+class CpfInvalido : public std::exception {
+public:
+    const char *what() const noexcept override;
+};
+
+class ConvenioInvalido : public std::exception {
+public:
+    const char *what() const noexcept override;
+};
+
 class Paciente {
     friend class ListaDePrioridade;
 public:
