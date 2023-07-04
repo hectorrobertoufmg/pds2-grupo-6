@@ -1,4 +1,5 @@
 #include "paciente.hpp"
+#include "exception.hpp"
 
 Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::string &convenio) {
     if(!sem_numeros(nome)) {
@@ -36,14 +37,3 @@ void Paciente::editar_dados_paciente(unsigned &cor) {
     _cor = cor;
 }
 
-const char *NomeInvalido::what() const noexcept {
-    return "Nome inválido!";
-}
-
-const char *CpfInvalido::what() const noexcept {
-    return "CPF inválido!";
-}
-
-const char *ConvenioInvalido::what() const noexcept {
-    return "Convênio inválido!";
-}

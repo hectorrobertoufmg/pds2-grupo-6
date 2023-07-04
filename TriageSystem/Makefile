@@ -4,11 +4,15 @@ BUILD := build
 BIN := bin
 EXEC := main
 
-${BIN}/${EXEC}: ${BUILD}/lista.o ${BUILD}/paciente.o ${BUILD}/funcoes.o ${BUILD}/main.o
+${BIN}/${EXEC}: ${BUILD}/lista.o ${BUILD}/paciente.o ${BUILD}/funcoes.o ${BUILD}/main.o ${BUILD}/exception.o
 	@mkdir -p ${BIN}/
 	g++ -std=c++17 $^ -o $@
 
 ${BUILD}/funcoes.o: ${SRC}/funcoes.cpp ${INCLUDE}/funcoes.hpp
+	@mkdir -p ${BUILD}
+	g++ -std=c++17 -I ${INCLUDE} -c $< -o $@
+
+${BUILD}/exception.o: ${SRC}/exception.cpp ${INCLUDE}/exception.hpp ${INCLUDE}/exception.hpp
 	@mkdir -p ${BUILD}
 	g++ -std=c++17 -I ${INCLUDE} -c $< -o $@
 

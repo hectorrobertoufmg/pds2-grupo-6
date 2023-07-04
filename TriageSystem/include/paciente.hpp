@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <exception>
 #include "funcoes.hpp"
 
 class Paciente {
@@ -22,19 +21,6 @@ private:
     unsigned _cor = 5;
 };
 
-class NomeInvalido : public std::exception {
-public:
-    const char *what() const noexcept override;
-};
 
-class CpfInvalido : public std::exception {
-public:
-    const char *what() const noexcept override;
-};
-
-class ConvenioInvalido : public std::exception {
-public:
-    const char *what() const noexcept override;
-};
 
 #endif
