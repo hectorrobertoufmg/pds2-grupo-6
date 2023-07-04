@@ -2,31 +2,8 @@
 #include <limits>
 #include <exception.hpp>
 
-bool e_maiusculo(std::string &string)
-{
-    for(int c : string)
-    {
-        if(!(c >= 65 && c <= 90))
-        {
-            return false;
-        }
-    }
-    return true;
-}
-bool e_minusculo(std::string &string)
-{
-    for(int c : string)
-    {
-        if(!(c >= 97 && c <= 122))
-        {
-            return false;
-        }
-    }
-    return true;
-}
 
-
-bool detecta_espacos(const std::string& string) {
+bool tem_spam_espacos(const std::string& string) {
     std::regex regexPattern("\\s{4,}");  // Regex para encontrar 4 ou mais espaços consecutivos
 
     if (std::regex_search(string, regexPattern)) {
@@ -37,20 +14,35 @@ bool detecta_espacos(const std::string& string) {
     return false;  // Nenhum span malicioso de espaços encontrado
 }
 
+
 bool nome_invalido(std::string &string)
 {
-    if(detecta_espacos(string))
-    {   // nome inválido!
-        throw SequenciaInvalidaEspacos();
-        return true;
-    }else if((e_maiusculo(string) || e_minusculo(string)))
-    {   // nome válido
-        return false;
-    }else
-    {   //  nome inválido!
-        throw NomeInvalido();
+    try
+    {
+        if(tem_spam_espacos(string))
+        {   // Nome com spam de espaços!
+            throw SequenciaInvalidaEspacos();
+        }
+        else if(!(sem_numeros(string)))
+        {
+            throw NomeInvalido();
+        }
+
+    }
+    catch(SequenciaInvalidaEspacos &err)
+    {
+        std::cout << err.what() << std::endl;
         return true;
     }
+    catch(NomeInvalido &err)
+    {
+        std::cout << err.what() << std::endl;
+        return true;
+    }
+
+    return false;
+
+
 
 }
 

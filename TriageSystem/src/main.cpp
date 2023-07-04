@@ -24,8 +24,8 @@ int main() {
                     std::cout << "Nome: ";
                     if(!limpo) limpar_buffer(limpo);
                     std::getline(std::cin, nome);
-                    if(!sem_numeros(nome)) {
-                        std::cout << "Nome inválido, tente novamente." << std::endl;
+                    if(nome_invalido(nome)) {
+        
                         sleep(1);
                         continue;
                     }
@@ -76,8 +76,7 @@ int main() {
                         std::cout << "Nome: ";
                         if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
-                        if(!sem_numeros(nome)) {
-                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                        if(nome_invalido(nome)) {
                             sleep(1);
                             continue;
                         }
@@ -146,8 +145,7 @@ int main() {
                         std::cout << "Nome: ";
                         if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
-                        if(!sem_numeros(nome)) {
-                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                        if(nome_invalido(nome)) {
                             sleep(1);
                             continue;
                         }

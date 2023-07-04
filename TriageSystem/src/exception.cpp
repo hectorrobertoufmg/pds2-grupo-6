@@ -17,5 +17,5 @@ const char *NumeroInvalido::what() const noexcept {
 }
 
 const char *SequenciaInvalidaEspacos::what() const noexcept {
-    return "Número muito grande de espaços( >4 consecutivos), tente novamente!";
+    return "Número muito grande de espaços ( >4 consecutivos ), tente novamente!";
 }
