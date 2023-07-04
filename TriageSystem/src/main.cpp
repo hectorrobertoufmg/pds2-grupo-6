@@ -1,20 +1,19 @@
 #include "lista.hpp"
 #include <sstream>
 #include <unistd.h>
+#include <exception.hpp>
 
 
 int main() {
     ListaDePrioridade lista;
-    bool exit = false;
-    bool limpo = true;
+    bool exit = false, limpo = true, opcao_invalida = true;
+    unsigned entrada;
     while(!exit) {
-        unsigned entrada;
         menu();
-        while(!(std::cin >> entrada)) {
-            std::cout << "Entrada inválida! Digite o número da operação desejada." << std::endl;
+        while(opcao_invalida){
+            valida_opcao(opcao_invalida, entrada);
             limpar_buffer(limpo);
         }
-        limpo = false;
         switch(entrada) {
             case 1:
             {

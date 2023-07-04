@@ -1,6 +1,7 @@
 #ifndef EXCEPTION_HPP
 #define EXCEPTION_HPP
-#include <exception>
+
+#include<exception>
 
 class NomeInvalido : public std::exception {
 public:
@@ -17,6 +18,15 @@ public:
     const char *what() const noexcept override;
 };
 
+class NumeroInvalido : public std::exception {
+public:
+    const char *what() const noexcept override;
+};
+
+class SequenciaInvalidaEspacos : public std::exception {
+public:
+    const char *what() const noexcept override;
+};
 
 
 
