@@ -2,15 +2,14 @@
 #include <sstream>
 #include <unistd.h>
 
+
 int main() {
     ListaDePrioridade lista;
     bool exit = false;
     bool limpo = true;
     while(!exit) {
         unsigned entrada;
-        std::cout << "1: Cadastrar paciente         2: Avaliar/reavaliar paciente         3: Ver dados do Paciente" << std::endl
-        << "4: Remover paciente         5: Atribuir paciente ao médico         6: Sair" << std::endl << std::endl
-        << "Digite o número da operação desejada: ";
+        menu();
         while(!(std::cin >> entrada)) {
             std::cout << "Entrada inválida! Digite o número da operação desejada." << std::endl;
             limpar_buffer(limpo);
