@@ -1,7 +1,7 @@
 #include "lista.hpp"
 #include <sstream>
 #include <unistd.h>
-#include <exception.hpp>
+#include "exception.hpp"
 
 
 int main() {
@@ -60,7 +60,13 @@ int main() {
                     }
                     break;
                 }
+        
+                Anamnese anamnese = Anamnese::coletarDadosAnamnese();
+
                 Paciente paciente(nome, idade, cpf, convenio);
+
+                paciente.associarAnamnese(anamnese);
+
                 lista.adicionar_paciente(paciente);
                 std::cout << "Paciente cadastrado com sucesso!" << std::endl << std::endl;
                 sleep(1);

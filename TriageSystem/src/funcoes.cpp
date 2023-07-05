@@ -1,6 +1,6 @@
 #include "funcoes.hpp"
 #include <limits>
-#include <exception.hpp>
+#include "exception.hpp"
 
 
 bool tem_spam_espacos(const std::string& string) {

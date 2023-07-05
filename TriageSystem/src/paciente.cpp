@@ -1,5 +1,8 @@
+#include <iostream>
+#include <string>
 #include "paciente.hpp"
 #include "exception.hpp"
+#include "anamnese.hpp"
 
 Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::string &convenio) {
     if(!sem_numeros(nome)) {
@@ -15,6 +18,7 @@ Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::st
     _idade = idade;
     _cpf = cpf;
     _convenio = convenio;
+    
 }
 
 void Paciente::imprimir_paciente() const {
@@ -37,3 +41,16 @@ void Paciente::editar_dados_paciente(unsigned &cor) {
     _cor = cor;
 }
 
+void Paciente::editarAnamnese(const std::string &sintomas, float temperatura, float altura, float peso, unsigned freq_cardiaca, const std::string &pressao) {
+    _anamnese.editarSintomas(sintomas);
+    _anamnese.editarTemperatura(temperatura);
+    _anamnese.editarAltura(altura);
+    _anamnese.editarPeso(peso);
+    _anamnese.editarFreq_Cardiaca(freq_cardiaca);
+    _anamnese.editarPressao(pressao);
+}
+
+void Paciente::associarAnamnese(const Anamnese &anamnese) {
+    _anamnese = anamnese;
+
+}
