@@ -10,16 +10,16 @@ class Medico {
 public:
     Medico(std::string &nome, std::string &crm, std::string &especialidade);
     void imprimir_medico() const;
-    void adicionar_paciente(Paciente &paciente);
-    void editar_dados_paciente(std::string &nome, unsigned &prioridade);
-    void ordenar_paciente(std::string &nome);
+    std::string nome() const;
+    void atualizar_paciente(Paciente &paciente);
     void remover_paciente(std::string &nome);
+
+    ListaDePrioridade pacientes;
 
 private:
     std::string _nome;
     std::string _crm;
     std::string _especialidade;
-    ListaDePrioridade _pacientes;
 };
 
 #endif

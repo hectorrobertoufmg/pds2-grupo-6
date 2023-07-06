@@ -43,3 +43,11 @@ bool Paciente::operator==(const Paciente &paciente) const {
     if(this->_cpf == paciente._cpf) return true;
     return false;
 }
+
+void Paciente::atribuir_medico(std::string &medico) {
+    _medico = medico;
+}
+
+std::string Paciente::medico() const {
+    return _medico;
+}

@@ -19,21 +19,18 @@ void Medico::imprimir_medico() const {
     std::cout << "CRM: " << _crm << std::endl;
 }
 
-void Medico::adicionar_paciente(Paciente &paciente) {
-    _pacientes.adicionar_paciente(paciente);
+std::string Medico::nome() const {
+    return _nome;
 }
 
-void Medico::editar_dados_paciente(std::string &nome, unsigned &prioridade) {
-    std::_List_iterator<Paciente> it = _pacientes.procurar_paciente(nome);
-    it->editar_dados_paciente(prioridade);
-}
-
-void Medico::ordenar_paciente(std::string &nome) {
-    std::_List_iterator<Paciente> it = _pacientes.procurar_paciente(nome);
-    _pacientes.ordenar_paciente(it);
+void Medico::atualizar_paciente(Paciente &paciente) {
+    std::string nome = paciente.nome();
+    auto it = pacientes.procurar_paciente(nome);
+    pacientes.remover_paciente(it);
+    pacientes.adicionar_paciente(paciente);
 }
 
 void Medico::remover_paciente(std::string &nome) {
-    std::_List_iterator<Paciente> it = _pacientes.procurar_paciente(nome);
-    _pacientes.remover_paciente(it);
+    auto it = pacientes.procurar_paciente(nome);
+    pacientes.remover_paciente(it);
 }

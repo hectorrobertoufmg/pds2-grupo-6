@@ -16,6 +16,8 @@ public:
     unsigned prioridade() const;
     void editar_dados_paciente(unsigned &prioridade);
     bool operator==(const Paciente &paciente) const;
+    void atribuir_medico(std::string &medico);
+    std::string medico() const;
 
 private:
     std::string _nome;
@@ -24,6 +26,7 @@ private:
     std::string _convenio;
     Anamnese _anamnese;
     unsigned _prioridade;
+    std::string _medico;
 };
 
 #endif

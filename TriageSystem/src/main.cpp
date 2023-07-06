@@ -1,9 +1,15 @@
 #define NDEBUG
 #include "lista.hpp"
+#include "medico.hpp"
 #include <sstream>
 #include <unistd.h>
 
 int main() {
+    std::string nome1 = "nome_um", nome2 = "nome_dois", nome3 = "nome_tres", nome4 = "nome_quatro", nome5 = "nome_cinco";
+    std::string crm1 = "crm1", crm2 = "crm2", crm3 = "crm3", crm4 = "crm4", crm5 = "crm5";
+    std::string esp1 = "especialidade_um", esp2 = "especialidade_dois", esp3 = "especialidade_tres", esp4 = "especialidade_quatro", esp5 = "especialidade_cinco";
+    Medico medico1(nome1, crm1, esp1), medico2(nome2, crm2, esp2), medico3(nome3, crm3, esp3), medico4(nome4, crm4, esp4), medico5(nome5, crm5, esp5);
+    Medico medicos[5] = {medico1, medico2, medico3, medico4, medico5};
     ListaDePrioridade lista;
     bool exit = false, limpo = true;
     unsigned entrada;
@@ -55,13 +61,23 @@ int main() {
                     std::getline(std::cin, convenio);
                     if(!sem_numeros(convenio)) {
                         std::cout << "Convênio inválido, tente novamente." << std::endl;
-                        
                         sleep(1);
                         continue;
                     }
                     break;
                 }
                 Paciente paciente(nome, idade, cpf, convenio);
+                if(medicos[0].pacientes.tamanho() <= medicos[1].pacientes.tamanho()) {
+                    std::string medico = medicos[0].nome();
+                    paciente.atribuir_medico(medico);
+                    medicos[0].pacientes.adicionar_paciente(paciente);
+                    std::cout << "->" << medicos[0].nome() << std::endl;
+                } else {
+                    std::string medico = medicos[1].nome();
+                    paciente.atribuir_medico(medico);
+                    medicos[1].pacientes.adicionar_paciente(paciente);
+                    std::cout << "->" << medicos[1].nome() << std::endl;
+                }
                 lista.adicionar_paciente(paciente);
                 std::cout << "Paciente cadastrado com sucesso!" << std::endl << std::endl;
                 sleep(1);
@@ -98,6 +114,30 @@ int main() {
                     limpar_buffer(limpo);
 
                     paciente->editar_dados_paciente(prioridade);
+                    lista.ordenar_paciente(paciente);
+                    
+                    if(paciente->medico() != medicos[0].nome() && paciente->medico() != medicos[1].nome()) {
+                        for(int i = 2; i < 5; ++i) {
+                            if(paciente->medico() == medicos[i].nome()) {
+                                auto it = medicos[i].pacientes.procurar_paciente(nome);
+                                medicos[i].atualizar_paciente(*paciente);
+                                break;
+                            }
+                        }
+                    } else {
+                        for(int i = 0; i < 2; ++i) {
+                            if(paciente->medico() == medicos[i].nome()) {
+                                medicos[i].remover_paciente(nome);
+                                int menor = 2;
+                                for(int i = 3; i < 5; ++i) {
+                                    if(medicos[menor].pacientes.tamanho() > medicos[i].pacientes.tamanho()) menor = i;
+                                }
+                                medicos[menor].pacientes.adicionar_paciente(*paciente);
+                                std::cout << "->" << medicos[menor].nome() << std::endl;
+                            }
+                        }
+                    }
+                    
                     std::cout << "Avaliação registrada." << std::endl << std::endl;
                     sleep(1);
                     break;

@@ -77,3 +77,7 @@ bool ListaDePrioridade::ordenado() {
     }
     return true;
 }
+
+int ListaDePrioridade::tamanho() {
+    return _pacientes.size();
+}

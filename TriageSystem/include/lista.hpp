@@ -62,6 +62,10 @@ public:
     /// @return True se a lista está ordenada, false caso contrário.
     bool ordenado();
 
+    /// @brief Retorna o tamanho da lista.
+    /// @return O tamanho da lista.
+    int tamanho();
+
 private:
     std::list<Paciente> _pacientes;
 };
