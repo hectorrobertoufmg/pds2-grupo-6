@@ -200,6 +200,11 @@ int main() {
                         sleep(1);
                         break;
                     }
+                    for(int i = 0; i < 5; ++i) {
+                        if(paciente->medico() == medicos[i].nome()) {
+                            medicos[i].remover_paciente(nome);
+                        }
+                    }
                     lista.remover_paciente(paciente);
                     std::cout << "Paciente removido." << std::endl << std::endl;
                     sleep(1);
@@ -217,7 +222,10 @@ int main() {
                     sleep(1);
                     break;
                 }
-                lista.exibir_lista();
+                for(int i = 0; i < 5; ++i) {
+                    std::cout << "Médico:" << medicos[i].nome() << std::endl;
+                    medicos[i].pacientes.exibir_lista();
+                }
                 std::cout << std::endl << std::endl;
                 sleep(1);
                 break;
