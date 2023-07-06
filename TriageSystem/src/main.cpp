@@ -105,6 +105,38 @@ int main() {
                     paciente->editar_dados_paciente(cor);
                     std::cout << "Avaliação registrada." << std::endl << std::endl;
                     sleep(1);
+                    std::cout << "Deseja editar a anamnese? Digite a opção desejada:  1 - Sim    2 - Não" << std::endl;
+
+                   while (true) {
+                        try {
+                              int entrada2;
+                               std::cin >> entrada2;
+                                
+        if (entrada2 == 1) {
+            
+            std::cout << "Direcionando para nova coleta de dados da anamnese..." << std::endl;
+            sleep(1);
+            limpar_buffer(limpo);
+            Anamnese anamnese = Anamnese::coletarDadosAnamnese();
+
+            paciente->associarAnamnese(anamnese);
+            std::cout << "Anamnese editada com sucesso!" << std::endl;
+            } else if (entrada2 == 2) {
+                break;
+            } else {
+                throw OpcaoInvalida();
+            }
+
+            break;
+        } catch (const OpcaoInvalida& e) {
+            std::cout << "Opção inválida. Digite uma opção válida." << std::endl;
+            limpar_buffer(limpo);
+        }
+}
+
+
+
+                    sleep(1);
                     break;
                 } catch(const ListaVazia &e) {
                     std::cout << "A lista de pacientes está vazia." << std::endl << std::endl;

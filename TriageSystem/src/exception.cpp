@@ -22,3 +22,6 @@ const char *SequenciaInvalidaEspacos::what() const noexcept {
     return "Número muito grande de espaços ( >4 consecutivos ), tente novamente!";
 }
 
+const char *OpcaoInvalida::what() const noexcept {
+        return "Opção inválida. Digite uma opção válida.";
+    }
