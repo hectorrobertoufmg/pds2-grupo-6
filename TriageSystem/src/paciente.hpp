@@ -14,7 +14,7 @@ public:
     void editar_dados_paciente(unsigned &cor);
     void editarAnamnese(const std::string &sintomas, float temperatura, float altura, float peso, unsigned freq_cardiaca, const std::string &pressao);
     void associarAnamnese(const Anamnese &anamnese);
-
+    void visualizarAnamneseDoPaciente () const;
 private:
     std::string _nome;
     unsigned _idade;

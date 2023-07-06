@@ -10,9 +10,10 @@ int main() {
     unsigned entrada;
     while(!exit) {
         menu();
-        while(opcao_invalida){
+        while(true){
             valida_opcao(opcao_invalida, entrada);
             limpar_buffer(limpo);
+            if(!opcao_invalida) break;
         }
         switch(entrada) {
             case 1:
@@ -61,14 +62,16 @@ int main() {
                     break;
                 }
         
+
+                Paciente paciente(nome, idade, cpf, convenio);              
                 Anamnese anamnese = Anamnese::coletarDadosAnamnese();
-
-                Paciente paciente(nome, idade, cpf, convenio);
-
                 paciente.associarAnamnese(anamnese);
-
                 lista.adicionar_paciente(paciente);
-                std::cout << "Paciente cadastrado com sucesso!" << std::endl << std::endl;
+                std::cout << "Paciente cadastrado com sucesso!" << std::endl;
+
+                
+                std::cout << "Anamnese cadastrada com sucesso!" << std::endl;
+                
                 sleep(1);
                 break;
             }
@@ -175,6 +178,7 @@ int main() {
             }
             case 5:
             {
+                
                 break;
             }
             case 6:

@@ -19,6 +19,8 @@ Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::st
     _cpf = cpf;
     _convenio = convenio;
     
+
+    
 }
 
 void Paciente::imprimir_paciente() const {
@@ -27,6 +29,8 @@ void Paciente::imprimir_paciente() const {
         std::cout << "CPF: " << _cpf << std::endl;
         std::cout << "Convênio: " << _convenio << std::endl;
         std::cout << "Cor: " << _cor << std::endl;
+        _anamnese.visualizarAnamnese();
+        
     }
 
 std::string Paciente::get_nome() const {
@@ -52,5 +56,4 @@ void Paciente::editarAnamnese(const std::string &sintomas, float temperatura, fl
 
 void Paciente::associarAnamnese(const Anamnese &anamnese) {
     _anamnese = anamnese;
-
 }
