@@ -3,19 +3,22 @@
 bool ListaDePrioridade::adicionar_paciente(Paciente &paciente) {
     if(_pacientes.empty()) {
         _pacientes.push_back(paciente);
+        assert(*(_pacientes.begin()) == paciente);
         return true;
     }
 
     std::_List_iterator<Paciente> it = _pacientes.begin();
     for(it; it != _pacientes.end(); ++it) {
-        if(paciente.get_cor() < it->get_cor()) {
+        if(paciente.prioridade() < it->prioridade()) {
             _pacientes.insert(it, paciente);
+            assert((*(std::prev(it)) == paciente) && ordenado());
             return true;
         }
     }
 
     if(it == _pacientes.end()) {
         _pacientes.push_back(paciente);
+        assert((*(_pacientes.rbegin()) == paciente) && ordenado());
         return true;
     }
 
@@ -27,7 +30,7 @@ std::_List_iterator<Paciente> ListaDePrioridade::procurar_paciente(std::string &
 
     std::_List_iterator<Paciente> it = _pacientes.begin();
     for(it; it != _pacientes.end(); ++it) {
-        if(it->get_nome() == nome) return it;
+        if(it->nome() == nome) return it;
     }
     return it;
 }
@@ -37,6 +40,7 @@ bool ListaDePrioridade::remover_paciente(std::_List_iterator<Paciente> &posicao)
 
     if(posicao != _pacientes.end()) {
         _pacientes.erase(posicao);
+        assert(ordenado());
         return true;
     }
     return false;
@@ -48,6 +52,7 @@ void ListaDePrioridade::ordenar_paciente(std::_List_iterator<Paciente> &posicao)
     Paciente paciente = *posicao;
     _pacientes.erase(posicao);
     ListaDePrioridade::adicionar_paciente(paciente);
+    assert(ordenado());
 }
 
 void ListaDePrioridade::exibir_lista() const {
@@ -62,6 +67,13 @@ std::_List_iterator<Paciente> ListaDePrioridade::fim_lista() {
     return _pacientes.end();
 }
 
-const char *ListaVazia::what() const noexcept {
-    return "A lista está vazia!";
+bool ListaDePrioridade::lista_vazia() const {
+    return _pacientes.empty();
+}
+
+bool ListaDePrioridade::ordenado() {
+    for(std::_List_iterator<Paciente> it = _pacientes.begin(); it != std::prev(_pacientes.end()); ++it) {
+        if(it->prioridade() > std::next(it)->prioridade()) return false;
+    }
+    return true;
 }

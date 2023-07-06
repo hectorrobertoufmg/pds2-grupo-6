@@ -14,6 +14,7 @@ Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::st
     _idade = idade;
     _cpf = cpf;
     _convenio = convenio;
+    _prioridade = 5;
 }
 
 void Paciente::imprimir_paciente() const {
@@ -21,29 +22,24 @@ void Paciente::imprimir_paciente() const {
         std::cout << "Idade: " << _idade << std::endl;
         std::cout << "CPF: " << _cpf << std::endl;
         std::cout << "Convênio: " << _convenio << std::endl;
-        std::cout << "Cor: " << _cor << std::endl;
+        std::cout << "Prioridade: " << _prioridade << std::endl;
+        _anamnese.visualizarAnamnese();
     }
 
-std::string Paciente::get_nome() const {
+std::string Paciente::nome() const {
     return _nome;
 }
 
-unsigned Paciente::get_cor() const {
-    return _cor;
+unsigned Paciente::prioridade() const {
+    return _prioridade;
 }
 
-void Paciente::editar_dados_paciente(unsigned &cor) {
-    _cor = cor;
+void Paciente::editar_dados_paciente(unsigned &prioridade) {
+    _anamnese.coletarDadosAnamnese();
+    _prioridade = prioridade;
 }
 
-const char *NomeInvalido::what() const noexcept {
-    return "Nome inválido!";
-}
-
-const char *CpfInvalido::what() const noexcept {
-    return "CPF inválido!";
-}
-
-const char *ConvenioInvalido::what() const noexcept {
-    return "Convênio inválido!";
+bool Paciente::operator==(const Paciente &paciente) const {
+    if(this->_cpf == paciente._cpf) return true;
+    return false;
 }

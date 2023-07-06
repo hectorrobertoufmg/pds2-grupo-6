@@ -3,38 +3,27 @@
 
 #include <iostream>
 #include <string>
-#include <exception>
+#include "anamnese.hpp"
+#include "setor.hpp"
+#include "exception.hpp"
 #include "funcoes.hpp"
 
 class Paciente {
 public:
     Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::string &convenio);
     void imprimir_paciente() const;
-    std::string get_nome() const;
-    unsigned get_cor() const;
-    void editar_dados_paciente(unsigned &cor);
+    std::string nome() const;
+    unsigned prioridade() const;
+    void editar_dados_paciente(unsigned &prioridade);
+    bool operator==(const Paciente &paciente) const;
 
 private:
     std::string _nome;
     unsigned _idade;
     std::string _cpf;
     std::string _convenio;
-    unsigned _cor = 5;
-};
-
-class NomeInvalido : public std::exception {
-public:
-    const char *what() const noexcept override;
-};
-
-class CpfInvalido : public std::exception {
-public:
-    const char *what() const noexcept override;
-};
-
-class ConvenioInvalido : public std::exception {
-public:
-    const char *what() const noexcept override;
+    Anamnese _anamnese;
+    unsigned _prioridade;
 };
 
 #endif

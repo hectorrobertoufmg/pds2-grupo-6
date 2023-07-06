@@ -1,21 +1,20 @@
+#define NDEBUG
 #include "lista.hpp"
 #include <sstream>
 #include <unistd.h>
 
 int main() {
     ListaDePrioridade lista;
-    bool exit = false;
-    bool limpo = true;
+    bool exit = false, limpo = true;
+    unsigned entrada;
     while(!exit) {
-        unsigned entrada;
-        std::cout << "1: Cadastrar paciente         2: Avaliar/reavaliar paciente         3: Ver dados do Paciente" << std::endl
-        << "4: Remover paciente         5: Atribuir paciente ao médico         6: Sair" << std::endl << std::endl
-        << "Digite o número da operação desejada: ";
-        while(!(std::cin >> entrada)) {
-            std::cout << "Entrada inválida! Digite o número da operação desejada." << std::endl;
+        bool opcao_invalida = true;
+        menu();
+        while(true) {
+            valida_opcao(opcao_invalida, entrada);
             limpar_buffer(limpo);
+            if(!opcao_invalida) break;
         }
-        limpo = false;
         switch(entrada) {
             case 1:
             {
@@ -26,8 +25,8 @@ int main() {
                     std::cout << "Nome: ";
                     if(!limpo) limpar_buffer(limpo);
                     std::getline(std::cin, nome);
-                    if(!sem_numeros(nome)) {
-                        std::cout << "Nome inválido, tente novamente." << std::endl;
+                    if(nome_invalido(nome)) {
+        
                         sleep(1);
                         continue;
                     }
@@ -71,15 +70,14 @@ int main() {
             case 2:
             {
                 try {
-                    unsigned cor;
+                    unsigned prioridade;
                     std::string nome;
                     std::_List_iterator<Paciente> paciente;
                     while(true) {
                         std::cout << "Nome: ";
                         if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
-                        if(!sem_numeros(nome)) {
-                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                        if(nome_invalido(nome)) {
                             sleep(1);
                             continue;
                         }
@@ -91,13 +89,15 @@ int main() {
                         sleep(1);
                         break;
                     }
-                    std::cout << "Cor: ";
-                    while(!(std::cin >> cor) || cor > 4) {                       
-                        std::cout << "Cor inválida, tente novamente." << std::endl;
+                    std::cout << "Prioridade: ";
+                    while(!(std::cin >> prioridade) || prioridade > 4) {                       
+                        std::cout << "Prioridade inválida, tente novamente." << std::endl;
                         limpar_buffer(limpo);
                     }
                     limpo = false;
-                    paciente->editar_dados_paciente(cor);
+                    limpar_buffer(limpo);
+
+                    paciente->editar_dados_paciente(prioridade);
                     std::cout << "Avaliação registrada." << std::endl << std::endl;
                     sleep(1);
                     break;
@@ -148,8 +148,7 @@ int main() {
                         std::cout << "Nome: ";
                         if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
-                        if(!sem_numeros(nome)) {
-                            std::cout << "Nome inválido, tente novamente." << std::endl;
+                        if(nome_invalido(nome)) {
                             sleep(1);
                             continue;
                         }
@@ -173,6 +172,14 @@ int main() {
             }
             case 5:
             {
+                if(lista.lista_vazia()) {
+                    std::cout << "A lista está vazia." << std::endl << std::endl;
+                    sleep(1);
+                    break;
+                }
+                lista.exibir_lista();
+                std::cout << std::endl << std::endl;
+                sleep(1);
                 break;
             }
             case 6:
