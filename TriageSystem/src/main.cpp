@@ -6,9 +6,10 @@
 
 int main() {
     ListaDePrioridade lista;
-    bool exit = false, limpo = true, opcao_invalida = true;
+    bool exit = false, limpo = true, opcao_invalida;
     unsigned entrada;
     while(!exit) {
+        opcao_invalida = true;
         menu();
         while(opcao_invalida){
             valida_opcao(opcao_invalida, entrada);
