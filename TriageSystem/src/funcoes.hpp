@@ -22,3 +22,5 @@ void menu();
 
 void valida_opcao(bool &flag, unsigned& entrada);
 
+bool validarPressao(const std::string &pressao);
+

@@ -93,3 +93,9 @@ void valida_opcao(bool& flag, unsigned& entrada)
     
 
 }
+
+bool validarPressao(const std::string& pressao) {
+    std::regex pressao_regex(R"(\d{2,3}/\d{2,3})");
+
+    return std::regex_match(pressao, pressao_regex);
+}

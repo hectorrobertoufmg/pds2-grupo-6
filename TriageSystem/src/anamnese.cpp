@@ -3,6 +3,7 @@
         #include <iostream>
         #include <string>
         #include "anamnese.hpp"
+        #include "funcoes.hpp"
 
             Anamnese::Anamnese() {}
             Anamnese::Anamnese (const std::string &sintomas, float temperatura, float altura, float peso, unsigned freq_cardiaca, const std:: string &pressao){
@@ -85,35 +86,97 @@
             }
 
             Anamnese Anamnese::coletarDadosAnamnese() {
-            
-            std::string sintomas;
-            float temperatura;
-            float altura;
-            float peso;
-            unsigned freq_cardiaca;
-            std::string pressao;
+    std::string sintomas;
+    float temperatura;
+    float altura;
+    float peso;
+    unsigned freq_cardiaca;
+    std::string pressao;
+    bool limpo = true;
 
-            std::cout << "Coleta de dados da anamnese" << std::endl;
+    try {
+        std::cout << "Coleta de dados da anamnese" << std::endl;
 
-            std::cout << "Sintomas: ";
-            std::getline(std::cin, sintomas);
+        std::cout << "Sintomas: ";
+        std::getline(std::cin, sintomas);
 
+        while (true) {
             std::cout << "Temperatura: ";
-            std::cin >> temperatura;
+            if (!(std::cin >> temperatura)) {
+                std::cout << "Temperatura inválida. Digite um número." << std::endl;
+                limpar_buffer(limpo);
+                continue;
+            }
 
+            if (temperatura < 0.0f) {
+                std::cout << "Temperatura inválida. O valor deve estar acima de 0°C." << std::endl;
+                continue;
+            }
+
+            break;
+        }
+
+        while (true) {
             std::cout << "Altura: ";
-            std::cin >> altura;
+            if (!(std::cin >> altura)) {
+                std::cout << "Altura inválida. Digite um número." << std::endl;
+                limpar_buffer(limpo);
+                continue;
+            }
 
+            if (altura < 0.0f || altura > 3.0f) {
+                std::cout << "Altura inválida. O valor deve estar entre 0m e 3m." << std::endl;
+                continue;
+            }
+
+            break;
+        }
+
+        while (true) {
             std::cout << "Peso: ";
-            std::cin >> peso;
+            if (!(std::cin >> peso)) {
+                std::cout << "Peso inválido. Digite um número." << std::endl;
+                limpar_buffer(limpo);
+                continue;
+            }
 
+            if (peso < 0.0f || peso > 500.0f) {
+                std::cout << "Peso inválido. O valor deve estar entre 0 e 500kg." << std::endl;
+                continue;
+            }
+
+            break;
+        }
+
+        while (true) {
             std::cout << "Frequência Cardíaca: ";
-            std::cin >> freq_cardiaca;
+            if (!(std::cin >> freq_cardiaca)) {
+                std::cout << "Frequência Cardíaca inválida. Digite um número." << std::endl;
+                limpar_buffer(limpo);
+                continue;
+            }
 
+            break;
+        }
+
+        std::cin.ignore();
+
+        while (true) {
             std::cout << "Pressão: ";
-            std::cin.ignore();
             std::getline(std::cin, pressao);
 
-            return Anamnese(sintomas, temperatura, altura, peso, freq_cardiaca, pressao);
-
+            if (!validarPressao(pressao)) {
+                std::cout << "Pressão inválida. Digite no formato 'xx/xx' ou 'xxx/xxx'." << std::endl;
+                continue;
             }
+
+            break;
+        }
+
+        return Anamnese(sintomas, temperatura, altura, peso, freq_cardiaca, pressao);
+
+    } catch (const std::exception& e) {
+        std::cout << "Ocorreu um erro durante a coleta de dados da anamnese: " << e.what() << std::endl;
+        return Anamnese();
+    }
+}
