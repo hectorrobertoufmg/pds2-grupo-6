@@ -1,7 +1,9 @@
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/buttons/github-buttons" data-icon="octicon-star" aria-label="Star buttons/github-buttons on GitHub">Star</a>
+<div style="position: fixed; bottom: 0; right: 0;">
+ <a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></div>
+
 
 # Sistema de Triagem de Pacientes
+
 
 Este repositório tem como objetivo a entrega do projeto "Sistema de Triagem de Pacientes" desenvolvido em C++ para a disciplina de Programação e desenvolvimento de software II (PDS II) na Universidade Federal de Minas Gerais (UFMG).
 *Projeto de Reprodução Acadêmica Sem Fins Lucrativos*
@@ -52,7 +54,7 @@ Digite o número correspondente com a ação que você deseja tomar:
  ┃ ┗ 📜paciente.cpp<br>
  ┗ 📜Makefile<br>
 
-
+                                                                           
 ## Autora e autores
 
 [Adrian Rios](https://github.com/adrian-rios) <br>
