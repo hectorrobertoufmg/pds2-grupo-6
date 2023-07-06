@@ -25,3 +25,28 @@ Nayara Matos <br>
 Iserson, Kenneth V., and John C. Moskop. “Triage in Medicine, Part I: Concept, History, and Types.” Annals of Emergency Medicine 49, no. 3 (March 2007): 275–81. https://doi.org/10.1016/j.annemergmed.2006.05.019.
 
 Azeredo, Thereza Raquel Machado, Helisamara Mota Guedes, Ricardo Alexandre Rebelo De Almeida, Tânia Couto Machado Chianca, e José Carlos Amado Martins. “Efficacy of the Manchester Triage System: A Systematic Review”. International Emergency Nursing 23, no 2 (abril de 2015): 47–52. https://doi.org/10.1016/j.ienj.2014.06.001.
+
+📦TriageSystem
+ ┣ 📂.vscode
+ ┃ ┣ 📜c_cpp_properties.json
+ ┃ ┗ 📜settings.json
+ ┣ 📂bin
+ ┃ ┗ 📜main
+ ┣ 📂build
+ ┃ ┣ 📜exception.o
+ ┃ ┣ 📜funcoes.o
+ ┃ ┣ 📜lista.o
+ ┃ ┣ 📜main.o
+ ┃ ┗ 📜paciente.o
+ ┣ 📂include
+ ┃ ┣ 📜exception.hpp
+ ┃ ┣ 📜funcoes.hpp
+ ┃ ┣ 📜lista.hpp
+ ┃ ┗ 📜paciente.hpp
+ ┣ 📂src
+ ┃ ┣ 📜exception.cpp
+ ┃ ┣ 📜funcoes.cpp
+ ┃ ┣ 📜lista.cpp
+ ┃ ┣ 📜main.cpp
+ ┃ ┗ 📜paciente.cpp
+ ┗ 📜Makefile
