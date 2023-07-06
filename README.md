@@ -5,7 +5,8 @@
 
 - [Visão geral](#descrição-geral)
 - [Como Funciona](#como-funciona)
-    - [Como Utilizar](#como-utilizar)
+    - [Como inicializar](#como-inicializar)
+    - [Como utilizar](#como-utilizar)
 - [Folder tree](#folder-tree)
 - [Constribuições](#autora-e-autores)
 - [Referências](#referências)
@@ -15,9 +16,9 @@ Este repositório tem como objetivo a entrega do projeto "Sistema de Triagem de 
 
 ## Descrição geral
 
-A triagem é um método eficiente que visa otimizar o atendimento a pacientes em situações de superlotação em hospitais e clínicas. Segundo [Iserson e Moskop 2004](https://doi.org/10.1016/j.annemergmed.2006.05.019), desde o século 18, a prática da triagem tem sido reconhecida, tendo como principal impulso o contexto de conflitos armados. Nesse sistema, pacientes com alto risco de morte são priorizados no atendimento, especialmente em ambientes hospitalares superlotados.
+A triagem é um conjuto procedimentos que visam otimizar o atendimento a pacientes e tem como ponto nevrálgico a estratégia de atender os pacientes de  acordo com o risco de morte do assistido. Segundo [Iserson e Moskop 2004](https://doi.org/10.1016/j.annemergmed.2006.05.019), há registro da utilização de técnicas de triagem que datam do século 18. Além disso, no trabalho de [Iserson e Moskop 2004](https://doi.org/10.1016/j.annemergmed.2006.05.019) mostra que o desenvolvimento de estratégias de triagem teve sua origem essencialmente no contexto de conflitos armados    . 
 
-Neste projeto, adotamos o Protocolo de Triagem de Manchester como modelo, amplamente reconhecido por sua eficácia, conforme evidenciado por [Azeredo et al, 2015](https://doi.org/10.1016/j.ienj.2014.06.001). Esse sistema utiliza uma escala de cores para classificar os pacientes em cinco níveis de prioridade. Profissionais de saúde devidamente capacitados empregam uma série de perguntas e avaliações para determinar a cor de triagem atribuída a cada paciente. Essas avaliações envolvem informações sobre sintomas, histórico médico, sinais vitais e identificação de quaisquer fatores de risco.
+Neste projeto, adotamos o Protocolo de Triagem de Manchester como modelo, amplamente reconhecido por sua eficiÊncia e eficácia, conforme evidenciado por [Azeredo et al, 2015](https://doi.org/10.1016/j.ienj.2014.06.001). Esse sistema utiliza uma escala de cores para classificar os pacientes em cinco níveis de prioridade. Profissionais de saúde devidamente capacitados empregam uma série de perguntas e avaliações para determinar a cor de triagem atribuída a cada paciente. Essas avaliações envolvem informações sobre sintomas, histórico médico, sinais vitais e identificação de quaisquer fatores de risco. Ao final, a cor atribuída representa o nível de gravidade da comorbidade do paciente, sendo a vermelha indicativo do mais grave e a azul do menos grave.
 
 <div style= "text-align: right;"><br><sub><a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></sub><br>
 </div>
@@ -27,14 +28,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis posuere d
 <div style= "text-align: right;"><br><sub><a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></sub><br>
 </div>
 
-### Como utilizar
+### Como inicializar
 Vá para a pasta raíz do software e digite o seguinte comando: <br>
-''''
+
 > make
-''''
+
 Em seguida, quando tudo já estiver compilado digite:
 
 > make run
+
+### Como utilizar
 
 Leia atentamente as opções fornecidas pelo "Menu".
 
@@ -87,6 +90,8 @@ Digite o número correspondente com a ação que você deseja tomar:
 Iserson, Kenneth V., and John C. Moskop. “Triage in Medicine, Part I: Concept, History, and Types.” Annals of Emergency Medicine 49, no. 3 (March 2007): 275–81. https://doi.org/10.1016/j.annemergmed.2006.05.019.
 
 Azeredo, Thereza Raquel Machado, Helisamara Mota Guedes, Ricardo Alexandre Rebelo De Almeida, Tânia Couto Machado Chianca, e José Carlos Amado Martins. “Efficacy of the Manchester Triage System: A Systematic Review”. International Emergency Nursing 23, no 2 (abril de 2015): 47–52. https://doi.org/10.1016/j.ienj.2014.06.001.
+
+[Grupo Brasileiro de Classificação de Risco](https://www.gbcr.org.br).
 
 [Nyakundi, H](https://www.freecodecamp.org/news/author/larymak/). (2021). "How to Write a Good README File for Your GitHub Project." freeCodeCamp.org. Recuperado de: https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/.
 
