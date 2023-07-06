@@ -223,8 +223,10 @@ int main() {
                     break;
                 }
                 for(int i = 0; i < 5; ++i) {
-                    std::cout << "Médico:" << medicos[i].nome() << std::endl;
-                    medicos[i].pacientes.exibir_lista();
+                    if(!medicos[i].pacientes.lista_vazia()) {
+                        std::cout << "Médico:" << medicos[i].nome() << std::endl;
+                        medicos[i].pacientes.exibir_lista();
+                    }
                 }
                 std::cout << std::endl << std::endl;
                 sleep(1);
