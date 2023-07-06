@@ -63,13 +63,12 @@ int main() {
                 }
         
 
-                Paciente paciente(nome, idade, cpf, convenio);              
+                Paciente paciente(nome, idade, cpf, convenio); 
+                std::cout << "Paciente cadastrado com sucesso!" << std::endl;             
                 Anamnese anamnese = Anamnese::coletarDadosAnamnese();
                 paciente.associarAnamnese(anamnese);
                 lista.adicionar_paciente(paciente);
-                std::cout << "Paciente cadastrado com sucesso!" << std::endl;
-
-                
+                    
                 std::cout << "Anamnese cadastrada com sucesso!" << std::endl;
                 
                 sleep(1);

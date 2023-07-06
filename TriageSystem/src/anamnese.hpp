@@ -2,6 +2,8 @@
 #define ANAMNESE_HPP
 
 #include <string>
+#include <regex>
+
 
 class Anamnese {
 

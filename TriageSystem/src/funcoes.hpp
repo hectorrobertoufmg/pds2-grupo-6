@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <regex>
-
+#include "exception.hpp"
 
 
 bool tem_spam_espacos(const std::string& string);
@@ -21,3 +21,4 @@ void limpar_buffer(bool &estado);
 void menu();
 
 void valida_opcao(bool &flag, unsigned& entrada);
+

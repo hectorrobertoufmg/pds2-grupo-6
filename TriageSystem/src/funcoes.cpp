@@ -1,6 +1,7 @@
 #include "funcoes.hpp"
 #include <limits>
 #include "exception.hpp"
+#include <regex>
 
 
 bool tem_spam_espacos(const std::string& string) {
@@ -90,4 +91,5 @@ void valida_opcao(bool& flag, unsigned& entrada)
     }
     flag = false;
     
+
 }

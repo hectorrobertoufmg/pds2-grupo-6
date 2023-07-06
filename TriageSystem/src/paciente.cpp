@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "paciente.hpp"
-#include "exception.hpp"
 #include "anamnese.hpp"
 
 Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::string &convenio) {

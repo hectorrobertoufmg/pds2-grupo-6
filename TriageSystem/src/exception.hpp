@@ -3,6 +3,7 @@
 
 #include<exception>
 
+
 class NomeInvalido : public std::exception {
 public:
     const char *what() const noexcept override;
@@ -28,7 +29,10 @@ public:
     const char *what() const noexcept override;
 };
 
-
+class FormatoInvalido : public std::exception {
+public:
+    const char *what() const noexcept override;
+};
 
 
 #endif
