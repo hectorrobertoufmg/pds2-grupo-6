@@ -100,7 +100,7 @@ int main() {
             }
             case 2:
             {
-                // Case = 2 -> cadastrar novo paciente!
+                // Case = 2 -> Avaliar ou Reavaliar paciente
                 try {
                     unsigned prioridade;
                     std::string nome;
@@ -110,9 +110,11 @@ int main() {
                         if(!limpo) limpar_buffer(limpo);
                         std::getline(std::cin, nome);
                         if(nome_invalido(nome)) {
+                            // Se o nome procurado for inválido, volta para o último loop
                             sleep(1);
                             continue;
                         }
+                        
                         paciente = lista.procurar_paciente(nome);
                         break;
                     }
