@@ -24,15 +24,3 @@ void Medico::imprimir_medico() const {
 std::string Medico::nome() const {
     return _nome;
 }
-
-void Medico::atualizar_paciente(Paciente &paciente) {
-    std::string nome = paciente.nome();
-    auto it = pacientes.procurar_paciente(nome);
-    pacientes.remover_paciente(it);
-    pacientes.adicionar_paciente(paciente);
-}
-
-void Medico::remover_paciente(std::string &nome) {
-    auto it = pacientes.procurar_paciente(nome);
-    pacientes.remover_paciente(it);
-}

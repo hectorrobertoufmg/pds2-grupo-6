@@ -135,17 +135,18 @@ int main() {
                     lista.ordenar_paciente(paciente);
                     
                     if(paciente->medico() != medicos[0].nome() && paciente->medico() != medicos[1].nome()) {
-                        for(int i = 2; i < 5; ++i) {
+                        for(int i = 2; i < 10; ++i) {
                             if(paciente->medico() == medicos[i].nome()) {
                                 auto it = medicos[i].pacientes.procurar_paciente(nome);
-                                medicos[i].atualizar_paciente(*paciente);
+                                medicos[i].pacientes.remover_paciente(nome);
+                                medicos[i].pacientes.adicionar_paciente(*paciente);
                                 break;
                             }
                         }
                     } else {
                         for(int i = 0; i < 2; ++i) {
                             if(paciente->medico() == medicos[i].nome()) {
-                                medicos[i].remover_paciente(nome);
+                                medicos[i].pacientes.remover_paciente(nome);
                                 int menor = 2;
                                 for(int i = 3; i < 5; ++i) {
                                     if(medicos[menor].pacientes.tamanho() > medicos[i].pacientes.tamanho()) menor = i;
@@ -200,7 +201,7 @@ int main() {
             }
             case 4:
             {   
-                // Case = 1 -> cadastrar novo paciente!
+                // Case = 4 -> remover paciente!
                 try {
                     std::string nome;
                     std::_List_iterator<Paciente> paciente;
@@ -220,9 +221,9 @@ int main() {
                         sleep(1);
                         break;
                     }
-                    for(int i = 0; i < 5; ++i) {
+                    for(int i = 0; i < 10; ++i) {
                         if(paciente->medico() == medicos[i].nome()) {
-                            medicos[i].remover_paciente(nome);
+                            medicos[i].pacientes.remover_paciente(nome);
                         }
                     }
                     lista.remover_paciente(paciente);
@@ -237,7 +238,7 @@ int main() {
             }
             case 5:
             {   
-                // Case = 1 -> cadastrar novo paciente!
+                // Case = 5 -> mostrar as listas de pacientes dos médicos!
                 if(lista.lista_vazia()) {
                     std::cout << "A lista está vazia." << std::endl << std::endl;
                     sleep(1);

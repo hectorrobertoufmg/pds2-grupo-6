@@ -38,6 +38,16 @@ public:
     /// @return Retorna verdadeiro caso o paciente tenha sido removido.
     bool remover_paciente(std::_List_iterator<Paciente> &posicao);
 
+    /// @brief Remove um paciente da lista.
+    /// @param nome O nome do paciente a ser removido.
+    ///
+    /// Procura o paciente na lista e, caso ele esteja nela, remove o paciente.
+    /// Assume que a lista não está vazia, caso contrário lança a exceção de
+    /// lista vazia.
+    ///
+    /// @return True caso o paciente tenha sido removido, false caso contrário.
+    bool remover_paciente(std::string &nome);
+
     /// @brief Ordena o um paciente.
     ///
     /// Copia o paciente do iterador recebido, apaga o paciente do iterador
