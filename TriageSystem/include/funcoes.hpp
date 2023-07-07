@@ -1,3 +1,7 @@
+#ifndef FUNCOES_HPP
+#define FUNCOES_HPP
+
+
 #include <string>
 #include <iostream>
 #include <regex>
@@ -40,3 +44,5 @@ void limpar_buffer(bool &estado);
 void menu();
 
 void valida_opcao(bool &flag, unsigned& entrada);
+
+#endif
