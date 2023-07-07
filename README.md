@@ -24,11 +24,11 @@ Neste projeto, adotamos o Protocolo de Triagem de Manchester como modelo, amplam
 </div>
 
 ## Como funciona
-O programa apresenta um processo simplificado para cadastro e avaliação de pacientes por um médico, além da respectiva distribuição dos pacientes para os médicos cadastrados. Dentre as funcionalidades, temos:
-    1. Adicionar Paciente: Permite cadastrar um novo paciente com informações como nome, idade, CPF e convênio médico. Também solicita a coleta de dados de anamnese para associar ao paciente, onde são avaliados aspectos como os sintomas, temperatura, pressão, peso, altura, entre outras informações acerca do indivíduo.
-    2. Editar Avaliação e Anamnese: Essa funcionalidade permite selecionar um paciente cadastrado e editar sua avaliação médica, alterando a cor da prioridade. Também oferece a opção de editar os dados da anamnese do paciente.
+O programa apresenta um processo simplificado para cadastro e avaliação de pacientes por um médico, além da respectiva distribuição dos pacientes para os médicos cadastrados. Dentre as funcionalidades, temos: <br>
+    1. Adicionar Paciente: Permite cadastrar um novo paciente com informações como nome, idade, CPF e convênio médico. Também solicita a coleta de dados de anamnese para associar ao paciente, onde são avaliados aspectos como os sintomas, temperatura, pressão, peso, altura, entre outras informações acerca do indivíduo. <br>
+    2. Editar Avaliação e Anamnese: Essa funcionalidade permite selecionar um paciente cadastrado e editar sua avaliação médica, alterando a cor da prioridade. Também oferece a opção de editar os dados da anamnese do paciente. <br>
     3. Visualizar Paciente: Permite mostrar as informações de cadastro do paciente, bem como os dados coletados na anamnese.
-    4. Remover Paciente: Permite remover um paciente cadastrado na lista.
+    4. Remover Paciente: Permite remover um paciente cadastrado na lista. <br>
     
 <div style= "text-align: right;"><br><sub><a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></sub><br>
 </div>
