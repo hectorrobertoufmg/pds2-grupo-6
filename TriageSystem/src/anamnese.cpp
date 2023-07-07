@@ -78,7 +78,7 @@
             void Anamnese::visualizarAnamnese() const{
 
                 std::cout << "Sintomas: " << _sintomas << std::endl;
-            std::cout << "Temperatura: " << _temperatura << "°C " << std::endl;
+            std::cout << "Temperatura: " << _temperatura << "°C" << std::endl;
             std::cout << "Altura: " << _altura <<"m" << std::endl;
             std::cout << "Peso: " << _peso << "kg" << std::endl;
             std::cout << "Frequência Cardíaca: " <<_freq_cardiaca << "bpm" << std::endl;
