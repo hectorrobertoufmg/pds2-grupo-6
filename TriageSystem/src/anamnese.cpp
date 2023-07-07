@@ -154,7 +154,7 @@
                 std::cout << "Frequência Cardíaca inválida. Digite um número." << std::endl;
                 limpar_buffer(limpo);
                 continue;
-            }
+            } 
 
             break;
         }
