@@ -12,6 +12,7 @@ int main() {
     
     std::vector<Medico> medicos;
 
+    // bando de dados com médicos registrados
     gerar_bd_medicos(medicos);
 
     ListaDePrioridade lista;
@@ -20,15 +21,18 @@ int main() {
     unsigned entrada;
     while(!exit) {
         bool opcao_invalida = true;
+        // Mostra o menu 
         menu();
         while(true) {
+            // Input do usuario -> entrada e é analisado na função valida_opcao()
             valida_opcao(opcao_invalida, entrada);
             limpar_buffer(limpo);
             if(!opcao_invalida) break;
         }
         switch(entrada) {
             case 1:
-            {
+            {   // Case = 1 -> cadastrar novo paciente!
+
                 std::string nome, cpf, convenio;
                 unsigned idade;
 
@@ -37,7 +41,7 @@ int main() {
                     if(!limpo) limpar_buffer(limpo);
                     std::getline(std::cin, nome);
                     if(nome_invalido(nome)) {
-        
+                        // Se o nome for invalido, volta para o último loop
                         sleep(1);
                         continue;
                     }
@@ -71,7 +75,12 @@ int main() {
                     }
                     break;
                 }
+                // Criando Paciente
                 Paciente paciente(nome, idade, cpf, convenio);
+
+                // Separando os dois primeiros médicos para a triagem dos pacientes
+                // Se o tamanho da lista de pacientes do primeiro for menor ou igual que o segundo
+                // o segundo médico receberá o paciente
                 if(medicos[0].pacientes.tamanho() <= medicos[1].pacientes.tamanho()) {
                     std::string medico = medicos[0].nome();
                     paciente.atribuir_medico(medico);
@@ -83,6 +92,7 @@ int main() {
                     medicos[1].pacientes.adicionar_paciente(paciente);
                     std::cout << "->" << medicos[1].nome() << std::endl;
                 }
+
                 lista.adicionar_paciente(paciente);
                 std::cout << "Paciente cadastrado com sucesso!" << std::endl << std::endl;
                 sleep(1);
@@ -90,6 +100,7 @@ int main() {
             }
             case 2:
             {
+                // Case = 2 -> cadastrar novo paciente!
                 try {
                     unsigned prioridade;
                     std::string nome;
@@ -153,7 +164,8 @@ int main() {
                 }
             }
             case 3:
-            {
+            {   
+                // Case = 1 -> cadastrar novo paciente!
                 try {
                     std::string nome;
                     std::_List_iterator<Paciente> paciente;
@@ -185,7 +197,8 @@ int main() {
                 }
             }
             case 4:
-            {
+            {   
+                // Case = 1 -> cadastrar novo paciente!
                 try {
                     std::string nome;
                     std::_List_iterator<Paciente> paciente;
@@ -221,7 +234,8 @@ int main() {
                 }
             }
             case 5:
-            {
+            {   
+                // Case = 1 -> cadastrar novo paciente!
                 if(lista.lista_vazia()) {
                     std::cout << "A lista está vazia." << std::endl << std::endl;
                     sleep(1);
@@ -238,7 +252,8 @@ int main() {
                 break;
             }
             case 6:
-            {
+            {   
+                // Case = 6 -> Opção para sair!
                 exit = true;
                 std::cout << "Saindo..." << std::endl;
                 sleep(2);
