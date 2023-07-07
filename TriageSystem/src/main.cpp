@@ -120,14 +120,15 @@ int main() {
                         for(int i = 2; i < 5; ++i) {
                             if(paciente->medico() == medicos[i].nome()) {
                                 auto it = medicos[i].pacientes.procurar_paciente(nome);
-                                medicos[i].atualizar_paciente(*paciente);
+                                medicos[i].pacientes.remover_paciente(nome);
+                                medicos[i].pacientes.adicionar_paciente(*paciente);
                                 break;
                             }
                         }
                     } else {
                         for(int i = 0; i < 2; ++i) {
                             if(paciente->medico() == medicos[i].nome()) {
-                                medicos[i].remover_paciente(nome);
+                                medicos[i].pacientes.remover_paciente(nome);
                                 int menor = 2;
                                 for(int i = 3; i < 5; ++i) {
                                     if(medicos[menor].pacientes.tamanho() > medicos[i].pacientes.tamanho()) menor = i;
@@ -202,7 +203,7 @@ int main() {
                     }
                     for(int i = 0; i < 5; ++i) {
                         if(paciente->medico() == medicos[i].nome()) {
-                            medicos[i].remover_paciente(nome);
+                            medicos[i].pacientes.remover_paciente(nome);
                         }
                     }
                     lista.remover_paciente(paciente);

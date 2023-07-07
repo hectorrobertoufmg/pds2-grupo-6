@@ -11,8 +11,6 @@ public:
     Medico(std::string &nome, std::string &crm, std::string &especialidade);
     void imprimir_medico() const;
     std::string nome() const;
-    void atualizar_paciente(Paciente &paciente);
-    void remover_paciente(std::string &nome);
 
     ListaDePrioridade pacientes;
 

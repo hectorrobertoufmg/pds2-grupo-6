@@ -15,7 +15,7 @@ public:
     /// prioridade e ordem de chegada.
     ///
     /// @param paciente O paciente que será adicionado.
-    /// @return Retorna verdadeiro caso o paciente tenha sido adicionado.
+    /// @return True caso o paciente tenha sido adicionado, false caso contrário.
     bool adicionar_paciente(Paciente &paciente);
 
     /// @brief Recupera o paciente que possui o nome dado.
@@ -25,7 +25,7 @@ public:
     /// está vazia, caso contrário lança a exceção de lista vazia.
     ///
     /// @param nome O nome do paciente a ser buscado.
-    /// @return Retorna um iterador para o paciente desejado.
+    /// @return Um iterador para o paciente desejado.
     std::_List_iterator<Paciente> procurar_paciente(std::string &nome);
 
     /// @brief Remove um paciente da lista.
@@ -35,8 +35,18 @@ public:
     /// fim da lista. Assume que a lista não está vazia, caso contrário lança 
     /// a exceção de lista vazia.
     ///
-    /// @return Retorna verdadeiro caso o paciente tenha sido removido.
+    /// @return True caso o paciente tenha sido removido, false caso contrário.
     bool remover_paciente(std::_List_iterator<Paciente> &posicao);
+
+    /// @brief Remove um paciente da lista.
+    /// @param nome O nome do paciente a ser removido.
+    ///
+    /// Procura o paciente na lista e, caso ele esteja nela, remove o paciente.
+    /// Assume que a lista não está vazia, caso contrário lança a exceção de
+    /// lista vazia.
+    ///
+    /// @return True caso o paciente tenha sido removido, false caso contrário.
+    bool remover_paciente(std::string &nome);
 
     /// @brief Ordena o um paciente.
     ///

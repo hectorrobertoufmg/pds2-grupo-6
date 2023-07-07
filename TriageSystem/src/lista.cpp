@@ -43,6 +43,20 @@ bool ListaDePrioridade::remover_paciente(std::_List_iterator<Paciente> &posicao)
         assert(ordenado());
         return true;
     }
+    assert(ordenado());
+    return false;
+}
+
+bool ListaDePrioridade::remover_paciente(std::string &nome) {
+    if(_pacientes.empty()) throw ListaVazia();
+
+    std::_List_iterator<Paciente> it = procurar_paciente(nome);
+    if(it == _pacientes.end()) return false;
+    if(remover_paciente(it)) {
+        assert(ordenado());
+        return true;
+    }
+    assert(ordenado());
     return false;
 }
 
