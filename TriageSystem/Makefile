@@ -4,6 +4,7 @@ BUILD := build
 BIN := bin
 EXEC := main
 
+
 ${BIN}/${EXEC}: ${BUILD}/lista.o ${BUILD}/paciente.o ${BUILD}/funcoes.o ${BUILD}/main.o ${BUILD}/exception.o
 	@mkdir -p ${BIN}/
 	g++ -std=c++17 $^ -o $@
