@@ -2,8 +2,6 @@
 #include <iostream>
 #include <regex>
 
-
-
 bool tem_spam_espacos(const std::string& string);
 
 bool e_maiusculo(std::string &string);
