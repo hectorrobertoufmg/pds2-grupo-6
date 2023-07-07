@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 #include <regex>
+#include "medico.hpp"
+
 
 
 
@@ -44,5 +46,7 @@ void limpar_buffer(bool &estado);
 void menu();
 
 void valida_opcao(bool &flag, unsigned& entrada);
-std::vector<Medico> gerar_bd_medicos(std::vector<Medico>& medicos);
+
+std::vector<Medico> gerar_bd_medicos(std::vector<Medico>&medicos);
+
 #endif

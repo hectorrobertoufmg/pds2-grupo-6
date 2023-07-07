@@ -1,5 +1,5 @@
-#ifndef LISTA_H
-#define LISTA_H
+#ifndef LISTA_HPP
+#define LISTA_HPP
 
 #include <list>
 #include <iostream>

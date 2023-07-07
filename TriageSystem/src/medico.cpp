@@ -1,4 +1,6 @@
 #include "medico.hpp"
+#include "exception.hpp"
+#include "funcoes.hpp"
 
 Medico::Medico(std::string &nome, std::string &crm, std::string &especialidade) {
     if(!sem_numeros(nome)) {

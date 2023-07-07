@@ -1,4 +1,5 @@
 #include "lista.hpp"
+#include "exception.hpp"
 
 bool ListaDePrioridade::adicionar_paciente(Paciente &paciente) {
     if(_pacientes.empty()) {

@@ -1,4 +1,6 @@
 #include "paciente.hpp"
+#include "exception.hpp"
+#include "funcoes.hpp"
 
 Paciente::Paciente(std::string &nome, unsigned &idade, std::string &cpf, std::string &convenio) {
     if(!sem_numeros(nome)) {

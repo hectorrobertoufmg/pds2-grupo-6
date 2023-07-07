@@ -1,16 +1,21 @@
 #define NDEBUG
 #include "lista.hpp"
 #include "medico.hpp"
+#include "paciente.hpp"
+#include "exception.hpp"
+#include "funcoes.hpp"
 #include <sstream>
 #include <unistd.h>
+#include <vector>
 
 int main() {
-    std::string nome1 = "nome_um", nome2 = "nome_dois", nome3 = "nome_tres", nome4 = "nome_quatro", nome5 = "nome_cinco";
-    std::string crm1 = "crm1", crm2 = "crm2", crm3 = "crm3", crm4 = "crm4", crm5 = "crm5";
-    std::string esp1 = "especialidade_um", esp2 = "especialidade_dois", esp3 = "especialidade_tres", esp4 = "especialidade_quatro", esp5 = "especialidade_cinco";
-    Medico medico1(nome1, crm1, esp1), medico2(nome2, crm2, esp2), medico3(nome3, crm3, esp3), medico4(nome4, crm4, esp4), medico5(nome5, crm5, esp5);
-    Medico medicos[5] = {medico1, medico2, medico3, medico4, medico5};
+    
+    std::vector<Medico> medicos;
+
+    gerar_bd_medicos(medicos);
+
     ListaDePrioridade lista;
+    
     bool exit = false, limpo = true;
     unsigned entrada;
     while(!exit) {

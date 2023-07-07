@@ -1,12 +1,9 @@
-#ifndef PACIENTE_H
-#define PACIENTE_H
+#ifndef PACIENTE_HPP
+#define PACIENTE_HPP
 
 #include <iostream>
 #include <string>
 #include "anamnese.hpp"
-#include "setor.hpp"
-#include "exception.hpp"
-#include "funcoes.hpp"
 
 class Paciente {
 public:

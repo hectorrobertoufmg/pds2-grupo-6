@@ -1,11 +1,8 @@
-#ifndef MEDICO_H
-#define MEDICO_H
+#ifndef MEDICO_HPP
+#define MEDICO_HPP
 
-#include <iostream>
-#include <string>
-#include <list>
-#include "lista.hpp"
-
+#include<string>
+#include"lista.hpp"
 class Medico {
 public:
     Medico(std::string &nome, std::string &crm, std::string &especialidade);

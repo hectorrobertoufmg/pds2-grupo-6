@@ -93,17 +93,16 @@ void valida_opcao(bool& flag, unsigned& entrada)
     
 }
 
-std::vector<Medico>& gerar_bd_medicos(std::vector<Medico> medicos)
+std::vector<Medico> gerar_bd_medicos(std::vector<Medico> &medicos)
 {
     std::srand (time(NULL));
 
-    std::vector<Medico> medicos;
 
     std::vector<std::string> sementes_crm = {"CRM 12345/SP", "CRM 67890/RJ", "CRM 24680/MG", 
                                             "CRM 13579/RS", "CRM 98765/BA", "CRM 10203/PR", 
                                             "CRM 45678/SC", "CRM 31415/PE", "CRM 17172/CE", 
                                             "CRM 81818/GO" };
-std::vector<Medico> gerar_bd_medicos(std::vector<Medico>& medicos);
+std::vector<Medico> gerar_bd_medicos(std::vector<Medico>&medicos);
 
 std::vector<std::string> sementes_especialidades = {"Clínica Geral", "Cardiologia", "Pediatria", 
                                                         "Ortopedia", "Ginecologia", "Neurologia", 
