@@ -1,6 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.hpp"
 #include "lista.hpp"
+#include "exception.hpp"
 
 TEST_CASE("Lista vazia") {
     ListaDePrioridade lista;
