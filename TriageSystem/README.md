@@ -6,7 +6,6 @@
 - [Visão geral](#descrição-geral)
 - [Como Funciona](#como-funciona)
     - [Como inicializar](#como-inicializar)
-    - [Como utilizar](#como-utilizar)
 - [Folder tree](#folder-tree)
 - [Constribuições](#autora-e-autores)
 - [Referências](#referências)
@@ -24,7 +23,16 @@ Neste projeto, adotamos o Protocolo de Triagem de Manchester como modelo, amplam
 </div>
 
 ## Como funciona
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis posuere diam, ac pulvinar quam congue non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus consectetur fringilla nisi, vel rutrum justo finibus ac
+
+<b>Adicionar Paciente:</b> Permite cadastrar um novo paciente com informações como nome, idade, CPF e convênio médico. Também solicita a coleta de dados de anamnese para associar ao paciente, onde são avaliados aspectos como os sintomas, temperatura, pressão, peso, altura, entre outras informações acerca do indivíduo.
+<b>AValiar/Reavaliar Paciente:</b> Essa funcionalidade permite selecionar um paciente cadastrado e editar sua avaliação médica, alterando a cor da prioridade. Também oferece a opção de editar os dados da anamnese do paciente.
+Remover Paciente: Permite remover um paciente cadastrado na lista. Essa funcionalidade permite selecionar um paciente cadastrado e removê-lo da lista de pacientes. Isso pode ser útil quando um paciente não precisa mais ser acompanhado ou quando os dados são inseridos erroneamente.
+
+<b>Distribuir Pacientes:</b> Essa funcionalidade é responsável por distribuir automaticamente os pacientes cadastrados entre os médicos disponíveis. Com base em critérios definidos, como a especialidade médica ou a carga de trabalho de cada médico, o sistema pode realizar a distribuição dos pacientes de forma equitativa e eficiente. Isso ajuda a otimizar o fluxo de trabalho dos médicos e garantir que cada paciente seja atendido pelo médico mais adequado.
+<b>Busca de Pacientes:</b> Essa funcionalidade possibilita pesquisar e localizar pacientes cadastrados com base em critérios específicos. O sistema pode permitir a busca por nome. Isso facilita o acesso rápido às informações de um paciente em particular, agilizando o atendimento e o acompanhamento médico.
+
+Essas funcionalidades fornecem um conjunto básico de recursos para o cadastro, avaliação e acompanhamento de pacientes por parte dos médicos.
+
 <div style= "text-align: right;"><br><sub><a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></sub><br>
 </div>
 
@@ -37,11 +45,6 @@ Em seguida, quando tudo já estiver compilado digite:
 
 > make run
 
-### Como utilizar
-
-Leia atentamente as opções fornecidas pelo "Menu".
-
-Digite o número correspondente com a ação que você deseja tomar:
 
 <div style= "text-align: right;"><br><sub><a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></sub><br>
 </div>
@@ -52,22 +55,34 @@ Digite o número correspondente com a ação que você deseja tomar:
  ┣ 📂bin<br>
  ┃ ┗ 📜main<br>
  ┣ 📂build<br>
+ ┃ ┣ 📜anamnese.o<br>
  ┃ ┣ 📜exception.o<br>
  ┃ ┣ 📜funcoes.o<br>
  ┃ ┣ 📜lista.o<br>
  ┃ ┣ 📜main.o<br>
- ┃ ┗ 📜paciente.o<br>
+ ┃ ┣ 📜medico.o<br>
+ ┃ ┣ 📜paciente.o<br>
+ ┃ ┗ 📜setor.o<br>
  ┣ 📂include<br>
+ ┃ ┣ 📜anamnese.hpp<br>
+ ┃ ┣ 📜doctest.hpp<br>
  ┃ ┣ 📜exception.hpp<br>
  ┃ ┣ 📜funcoes.hpp<br>
  ┃ ┣ 📜lista.hpp<br>
- ┃ ┗ 📜paciente.hpp<br>
+ ┃ ┣ 📜medico.hpp<br>
+ ┃ ┣ 📜paciente.hpp<br>
+ ┃ ┗ 📜setor.hpp<br>
  ┣ 📂src<br>
+ ┃ ┣ 📜anamnese.cpp<br>
  ┃ ┣ 📜exception.cpp<br>
  ┃ ┣ 📜funcoes.cpp<br>
  ┃ ┣ 📜lista.cpp<br>
  ┃ ┣ 📜main.cpp<br>
- ┃ ┗ 📜paciente.cpp<br>
+ ┃ ┣ 📜medico.cpp<br>
+ ┃ ┣ 📜paciente.cpp<br>
+ ┃ ┣ 📜setor.cpp<br>
+ ┃ ┣ 📜teste_anamnese.cpp<br>
+ ┃ ┗ 📜teste_lista.cpp<br>
  ┗ 📜Makefile<br>
 
 <div style= "text-align: right;"><br><sub><a href="#sistema-de-triagem-de-pacientes">Voltar ao topo</a></sub><br>

@@ -1,0 +1,184 @@
+\hypertarget{classListaDePrioridade}{}\doxysection{Lista\+De\+Prioridade Class Reference}
+\label{classListaDePrioridade}\index{ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classListaDePrioridade_afffbb3a5c9d815a0ac68bbf8354f2ac3}{adicionar\+\_\+paciente}} (\mbox{\hyperlink{classPaciente}{Paciente}} \&paciente)
+\begin{DoxyCompactList}\small\item\em Adiciona um paciente a lista. \end{DoxyCompactList}\item 
+std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ \mbox{\hyperlink{classListaDePrioridade_a8ba8d7d3887eff013369b7ccef7231c6}{procurar\+\_\+paciente}} (std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Recupera o paciente que possui o nome dado. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classListaDePrioridade_a3ec33bdbe8a38d33f356ee16eb9edd9f}{remover\+\_\+paciente}} (std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ \&posicao)
+\begin{DoxyCompactList}\small\item\em Remove um paciente da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classListaDePrioridade_a3f5e68d3eb6877f3a2ab9d8f9e083c25}{remover\+\_\+paciente}} (std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Remove um paciente da lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classListaDePrioridade_a7706bff9c822b7d6950cf693179a4232}{ordenar\+\_\+paciente}} (std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ \&posicao)
+\begin{DoxyCompactList}\small\item\em Ordena o um paciente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classListaDePrioridade_ad70951fedeea5b45f257523b25d8b76c}\label{classListaDePrioridade_ad70951fedeea5b45f257523b25d8b76c}} 
+void \mbox{\hyperlink{classListaDePrioridade_ad70951fedeea5b45f257523b25d8b76c}{exibir\+\_\+lista}} () const
+\begin{DoxyCompactList}\small\item\em Imprime na tela as informações completas de todos os pacientes. \end{DoxyCompactList}\item 
+std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ \mbox{\hyperlink{classListaDePrioridade_a70cebc4f9fe480b5864e970fe06b8f92}{fim\+\_\+lista}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o iterador para o fim da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classListaDePrioridade_a968b6b175d08d6f7cb516290f89e1ef0}{lista\+\_\+vazia}} () const
+\begin{DoxyCompactList}\small\item\em Retorna se a lista está ou não vazia. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classListaDePrioridade_a177522d5493bcc63204851604a8685af}{ordenado}} ()
+\begin{DoxyCompactList}\small\item\em Retorna se a lista está ou não ordenada. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classListaDePrioridade_a001c83de5a3ef14929ddcb0164f45200}{tamanho}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho da lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classListaDePrioridade_afffbb3a5c9d815a0ac68bbf8354f2ac3}\label{classListaDePrioridade_afffbb3a5c9d815a0ac68bbf8354f2ac3}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!adicionar\_paciente@{adicionar\_paciente}}
+\index{adicionar\_paciente@{adicionar\_paciente}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{adicionar\_paciente()}{adicionar\_paciente()}}
+{\footnotesize\ttfamily bool Lista\+De\+Prioridade\+::adicionar\+\_\+paciente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaciente}{Paciente}} \&}]{paciente }\end{DoxyParamCaption})}
+
+
+
+Adiciona um paciente a lista. 
+
+Adiciona um paciente a lista ordenando-\/o de acordo com sua prioridade e ordem de chegada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paciente} & O paciente que será adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro caso o paciente tenha sido adicionado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a70cebc4f9fe480b5864e970fe06b8f92}\label{classListaDePrioridade_a70cebc4f9fe480b5864e970fe06b8f92}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!fim\_lista@{fim\_lista}}
+\index{fim\_lista@{fim\_lista}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{fim\_lista()}{fim\_lista()}}
+{\footnotesize\ttfamily std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ Lista\+De\+Prioridade\+::fim\+\_\+lista (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o iterador para o fim da lista. 
+
+\begin{DoxyReturn}{Returns}
+O iterador para o fim da lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a968b6b175d08d6f7cb516290f89e1ef0}\label{classListaDePrioridade_a968b6b175d08d6f7cb516290f89e1ef0}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!lista\_vazia@{lista\_vazia}}
+\index{lista\_vazia@{lista\_vazia}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{lista\_vazia()}{lista\_vazia()}}
+{\footnotesize\ttfamily bool Lista\+De\+Prioridade\+::lista\+\_\+vazia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna se a lista está ou não vazia. 
+
+\begin{DoxyReturn}{Returns}
+True se a lista está vazia, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a177522d5493bcc63204851604a8685af}\label{classListaDePrioridade_a177522d5493bcc63204851604a8685af}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!ordenado@{ordenado}}
+\index{ordenado@{ordenado}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{ordenado()}{ordenado()}}
+{\footnotesize\ttfamily bool Lista\+De\+Prioridade\+::ordenado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna se a lista está ou não ordenada. 
+
+\begin{DoxyReturn}{Returns}
+True se a lista está ordenada, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a7706bff9c822b7d6950cf693179a4232}\label{classListaDePrioridade_a7706bff9c822b7d6950cf693179a4232}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!ordenar\_paciente@{ordenar\_paciente}}
+\index{ordenar\_paciente@{ordenar\_paciente}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{ordenar\_paciente()}{ordenar\_paciente()}}
+{\footnotesize\ttfamily void Lista\+De\+Prioridade\+::ordenar\+\_\+paciente (\begin{DoxyParamCaption}\item[{std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ \&}]{posicao }\end{DoxyParamCaption})}
+
+
+
+Ordena o um paciente. 
+
+Copia o paciente do iterador recebido, apaga o paciente do iterador e adiciona a cópia à lista na posição correta. Assume que a lista não está vazia, caso contrário lança a exceção de lista vazia.
+
+
+\begin{DoxyParams}{Parameters}
+{\em posicao} & O iterador do paciente a ser ordenado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classListaDePrioridade_a8ba8d7d3887eff013369b7ccef7231c6}\label{classListaDePrioridade_a8ba8d7d3887eff013369b7ccef7231c6}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!procurar\_paciente@{procurar\_paciente}}
+\index{procurar\_paciente@{procurar\_paciente}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{procurar\_paciente()}{procurar\_paciente()}}
+{\footnotesize\ttfamily std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ Lista\+De\+Prioridade\+::procurar\+\_\+paciente (\begin{DoxyParamCaption}\item[{std\+::string \&}]{nome }\end{DoxyParamCaption})}
+
+
+
+Recupera o paciente que possui o nome dado. 
+
+Retorna o paciente que possui o nome igual ao parâmetro ou o iterador do fim da lista. A lista não sofre alterações. Assume que a lista não está vazia, caso contrário lança a exceção de lista vazia.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & O nome do paciente a ser buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna um iterador para o paciente desejado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a3ec33bdbe8a38d33f356ee16eb9edd9f}\label{classListaDePrioridade_a3ec33bdbe8a38d33f356ee16eb9edd9f}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!remover\_paciente@{remover\_paciente}}
+\index{remover\_paciente@{remover\_paciente}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{remover\_paciente()}{remover\_paciente()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Lista\+De\+Prioridade\+::remover\+\_\+paciente (\begin{DoxyParamCaption}\item[{std\+::\+\_\+\+List\+\_\+iterator$<$ \mbox{\hyperlink{classPaciente}{Paciente}} $>$ \&}]{posicao }\end{DoxyParamCaption})}
+
+
+
+Remove um paciente da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posicao} & O iterador do paciente a ser removido.\\
+\hline
+\end{DoxyParams}
+Remove o paciente localizado pelo iterador caso o iterador não seja o fim da lista. Assume que a lista não está vazia, caso contrário lança a exceção de lista vazia.
+
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro caso o paciente tenha sido removido. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a3f5e68d3eb6877f3a2ab9d8f9e083c25}\label{classListaDePrioridade_a3f5e68d3eb6877f3a2ab9d8f9e083c25}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!remover\_paciente@{remover\_paciente}}
+\index{remover\_paciente@{remover\_paciente}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{remover\_paciente()}{remover\_paciente()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Lista\+De\+Prioridade\+::remover\+\_\+paciente (\begin{DoxyParamCaption}\item[{std\+::string \&}]{nome }\end{DoxyParamCaption})}
+
+
+
+Remove um paciente da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & O nome do paciente a ser removido.\\
+\hline
+\end{DoxyParams}
+Procura o paciente na lista e, caso ele esteja nela, remove o paciente. Assume que a lista não está vazia, caso contrário lança a exceção de lista vazia.
+
+\begin{DoxyReturn}{Returns}
+True caso o paciente tenha sido removido, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classListaDePrioridade_a001c83de5a3ef14929ddcb0164f45200}\label{classListaDePrioridade_a001c83de5a3ef14929ddcb0164f45200}} 
+\index{ListaDePrioridade@{ListaDePrioridade}!tamanho@{tamanho}}
+\index{tamanho@{tamanho}!ListaDePrioridade@{ListaDePrioridade}}
+\doxysubsubsection{\texorpdfstring{tamanho()}{tamanho()}}
+{\footnotesize\ttfamily int Lista\+De\+Prioridade\+::tamanho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o tamanho da lista. 
+
+\begin{DoxyReturn}{Returns}
+O tamanho da lista. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/lista.\+hpp\item 
+src/lista.\+cpp\end{DoxyCompactItemize}

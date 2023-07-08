@@ -1,0 +1,106 @@
+\hypertarget{index_autotoc_md1}{}\doxysection{Índice}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item \href{\#descrição-geral}{\texttt{ Visão geral}}
+\item \href{\#como-funciona}{\texttt{ Como Funciona}}
+\begin{DoxyItemize}
+\item \href{\#como-inicializar}{\texttt{ Como inicializar}}
+\end{DoxyItemize}
+\item \href{\#folder-tree}{\texttt{ Folder tree}}
+\item \href{\#autora-e-autores}{\texttt{ Constribuições}}
+\item \href{\#referências}{\texttt{ Referências}}
+\end{DoxyItemize}
+
+Este repositório tem como objetivo a entrega do projeto \char`\"{}\+Sistema de Triagem de Pacientes\char`\"{} desenvolvido em C++ para a disciplina de Programação e desenvolvimento de software II (P\+DS II) na Universidade Federal de Minas Gerais (U\+F\+MG).~\newline
+ {\itshape Projeto de Reprodução Acadêmica Sem Fins Lucrativos}\hypertarget{index_autotoc_md2}{}\doxysection{Descrição geral}\label{index_autotoc_md2}
+A triagem é um conjuto procedimentos que visam otimizar o atendimento a pacientes e tem como ponto nevrálgico a estratégia de atender os pacientes de acordo com o risco de morte do assistido. Segundo \href{https://doi.org/10.1016/j.annemergmed.2006.05.019}{\texttt{ Iserson e Moskop 2004}}, há registro da utilização de técnicas de triagem que datam do século 18. Além disso, no trabalho de \href{https://doi.org/10.1016/j.annemergmed.2006.05.019}{\texttt{ Iserson e Moskop 2004}} mostra que o desenvolvimento de estratégias de triagem teve sua origem essencialmente no contexto de conflitos armados .
+
+Neste projeto, adotamos o Protocolo de Triagem de Manchester como modelo, amplamente reconhecido por sua eficiÊncia e eficácia, conforme evidenciado por \href{https://doi.org/10.1016/j.ienj.2014.06.001}{\texttt{ Azeredo et al, 2015}}. Esse sistema utiliza uma escala de cores para classificar os pacientes em cinco níveis de prioridade. Profissionais de saúde devidamente capacitados empregam uma série de perguntas e avaliações para determinar a cor de triagem atribuída a cada paciente. Essas avaliações envolvem informações sobre sintomas, histórico médico, sinais vitais e identificação de quaisquer fatores de risco. Ao final, a cor atribuída representa o nível de gravidade da comorbidade do paciente, sendo a vermelha indicativo do mais grave e a azul do menos grave.
+
+~\newline
+\textsubscript{\href{\#sistema-de-triagem-de-pacientes}{\texttt{ Voltar ao topo}}}~\newline
+ \hypertarget{index_autotoc_md3}{}\doxysection{Como funciona}\label{index_autotoc_md3}
+{\bfseries{Adicionar \mbox{\hyperlink{classPaciente}{Paciente}}\+:}} Permite cadastrar um novo paciente com informações como nome, idade, C\+PF e convênio médico. Também solicita a coleta de dados de anamnese para associar ao paciente, onde são avaliados aspectos como os sintomas, temperatura, pressão, peso, altura, entre outras informações acerca do indivíduo. {\bfseries{A\+Valiar/\+Reavaliar \mbox{\hyperlink{classPaciente}{Paciente}}\+:}} Essa funcionalidade permite selecionar um paciente cadastrado e editar sua avaliação médica, alterando a cor da prioridade. Também oferece a opção de editar os dados da anamnese do paciente. Remover \mbox{\hyperlink{classPaciente}{Paciente}}\+: Permite remover um paciente cadastrado na lista. Essa funcionalidade permite selecionar um paciente cadastrado e removê-\/lo da lista de pacientes. Isso pode ser útil quando um paciente não precisa mais ser acompanhado ou quando os dados são inseridos erroneamente.
+
+{\bfseries{Distribuir Pacientes\+:}} Essa funcionalidade é responsável por distribuir automaticamente os pacientes cadastrados entre os médicos disponíveis. Com base em critérios definidos, como a especialidade médica ou a carga de trabalho de cada médico, o sistema pode realizar a distribuição dos pacientes de forma equitativa e eficiente. Isso ajuda a otimizar o fluxo de trabalho dos médicos e garantir que cada paciente seja atendido pelo médico mais adequado. {\bfseries{Busca de Pacientes\+:}} Essa funcionalidade possibilita pesquisar e localizar pacientes cadastrados com base em critérios específicos. O sistema pode permitir a busca por nome. Isso facilita o acesso rápido às informações de um paciente em particular, agilizando o atendimento e o acompanhamento médico.
+
+Essas funcionalidades fornecem um conjunto básico de recursos para o cadastro, avaliação e acompanhamento de pacientes por parte dos médicos.
+
+~\newline
+\textsubscript{\href{\#sistema-de-triagem-de-pacientes}{\texttt{ Voltar ao topo}}}~\newline
+ \hypertarget{index_autotoc_md4}{}\doxysubsection{Como inicializar}\label{index_autotoc_md4}
+Vá para a pasta raíz do software e digite o seguinte comando\+: ~\newline
+
+
+\begin{quote}
+make \end{quote}
+
+
+Em seguida, quando tudo já estiver compilado digite\+:
+
+\begin{quote}
+make run \end{quote}
+
+
+~\newline
+\textsubscript{\href{\#sistema-de-triagem-de-pacientes}{\texttt{ Voltar ao topo}}}~\newline
+ \hypertarget{index_autotoc_md5}{}\doxysection{Folder tree}\label{index_autotoc_md5}
+📦\+Triage\+System~\newline
+ ┣ 📂bin~\newline
+ ┃ ┗ 📜main~\newline
+ ┣ 📂build~\newline
+ ┃ ┣ 📜anamnese.\+o~\newline
+ ┃ ┣ 📜exception.\+o~\newline
+ ┃ ┣ 📜funcoes.\+o~\newline
+ ┃ ┣ 📜lista.\+o~\newline
+ ┃ ┣ 📜main.\+o~\newline
+ ┃ ┣ 📜medico.\+o~\newline
+ ┃ ┣ 📜paciente.\+o~\newline
+ ┃ ┗ 📜setor.\+o~\newline
+ ┣ 📂include~\newline
+ ┃ ┣ \mbox{\hyperlink{anamnese_8hpp_source}{📜anamnese.\+hpp}}~\newline
+ ┃ ┣ 📜doctest.\+hpp~\newline
+ ┃ ┣ \mbox{\hyperlink{exception_8hpp_source}{📜exception.\+hpp}}~\newline
+ ┃ ┣ \mbox{\hyperlink{funcoes_8hpp_source}{📜funcoes.\+hpp}}~\newline
+ ┃ ┣ \mbox{\hyperlink{lista_8hpp_source}{📜lista.\+hpp}}~\newline
+ ┃ ┣ \mbox{\hyperlink{medico_8hpp_source}{📜medico.\+hpp}}~\newline
+ ┃ ┣ \mbox{\hyperlink{paciente_8hpp_source}{📜paciente.\+hpp}}~\newline
+ ┃ ┗ \mbox{\hyperlink{setor_8hpp_source}{📜setor.\+hpp}}~\newline
+ ┣ 📂src~\newline
+ ┃ ┣ 📜anamnese.\+cpp~\newline
+ ┃ ┣ 📜exception.\+cpp~\newline
+ ┃ ┣ 📜funcoes.\+cpp~\newline
+ ┃ ┣ 📜lista.\+cpp~\newline
+ ┃ ┣ 📜main.\+cpp~\newline
+ ┃ ┣ 📜medico.\+cpp~\newline
+ ┃ ┣ 📜paciente.\+cpp~\newline
+ ┃ ┣ 📜setor.\+cpp~\newline
+ ┃ ┣ 📜teste\+\_\+anamnese.\+cpp~\newline
+ ┃ ┗ 📜teste\+\_\+lista.\+cpp~\newline
+ ┗ 📜\+Makefile~\newline
+
+
+~\newline
+\textsubscript{\href{\#sistema-de-triagem-de-pacientes}{\texttt{ Voltar ao topo}}}~\newline
+ \hypertarget{index_autotoc_md6}{}\doxysection{Autora e autores}\label{index_autotoc_md6}
+\href{https://github.com/adrian-rios}{\texttt{ Adrian Rios}} ~\newline
+ \href{https://github.com/gabriel-hrp}{\texttt{ Gabriel Reis}} ~\newline
+ \href{https://github.com/hectorrobertoufmg}{\texttt{ Hector Silva}} ~\newline
+ \href{https://github.com/Mtangjr}{\texttt{ Miguel Tang}} ~\newline
+ \href{https://github.com/nayaramatos}{\texttt{ Nayara Matos}} ~\newline
+
+
+~\newline
+\textsubscript{\href{\#sistema-de-triagem-de-pacientes}{\texttt{ Voltar ao topo}}}~\newline
+ \hypertarget{index_autotoc_md7}{}\doxysection{Referências}\label{index_autotoc_md7}
+Iserson, Kenneth V., and John C. Moskop. “\+Triage in Medicine, Part I\+: Concept, History, and Types.\+” Annals of Emergency Medicine 49, no. 3 (March 2007)\+: 275–81. \href{https://doi.org/10.1016/j.annemergmed.2006.05.019}{\texttt{ https\+://doi.\+org/10.\+1016/j.\+annemergmed.\+2006.\+05.\+019}}.
+
+Azeredo, Thereza Raquel Machado, Helisamara Mota Guedes, Ricardo Alexandre Rebelo De Almeida, Tânia Couto Machado Chianca, e José Carlos Amado Martins. “\+Efficacy of the Manchester Triage System\+: A Systematic Review”. International Emergency Nursing 23, no 2 (abril de 2015)\+: 47–52. \href{https://doi.org/10.1016/j.ienj.2014.06.001}{\texttt{ https\+://doi.\+org/10.\+1016/j.\+ienj.\+2014.\+06.\+001}}.
+
+\href{https://www.gbcr.org.br}{\texttt{ Grupo Brasileiro de Classificação de Risco}}.
+
+\href{https://www.freecodecamp.org/news/author/larymak/}{\texttt{ Nyakundi, H}}. (2021). \char`\"{}\+How to Write a Good R\+E\+A\+D\+M\+E File for Your Git\+Hub Project.\char`\"{} free\+Code\+Camp.\+org. Recuperado de\+: \href{https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/}{\texttt{ https\+://www.\+freecodecamp.\+org/news/how-\/to-\/write-\/a-\/good-\/readme-\/file/}}.
+
+~\newline
+\textsubscript{\href{\#sistema-de-triagem-de-pacientes}{\texttt{ Voltar ao topo}}}~\newline
+  

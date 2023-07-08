@@ -9,7 +9,9 @@
 
 
 
-
+/// @brief Tem spam de espaços.
+/// Esta função não deixa o usuário utilizar mais de 4 espaços consecutivos
+/// @param string uma strig que será validada
 bool tem_spam_espacos(const std::string& string);
 
 /// @brief Retorna se o nome é válido ou não.
@@ -41,10 +43,22 @@ void limpar_buffer(bool &estado);
 /// @brief Imprime na tela o menu do programa.
 void menu();
 
+/// @brief Validar opcao.
+/// Esta funcao valida a escolha do usuário, se for algo diferente de número
+/// retornará uma flag e assim o loop continuará!
+/// @param flag recebe um vector do tipo Medico
+/// @param entrada
 void valida_opcao(bool &flag, unsigned& entrada);
 
+/// @brief Gera banco de dados .
+/// Esta função gerá um banco de dados estático, 10 médicos, com nome
+/// especialidade e CRM para cada médico.
+/// @param medicos recebe um vector do tipo Medico
 std::vector<Medico> gerar_bd_medicos(std::vector<Medico>&medicos);
 
+/// @brief Validar pressão .
+/// Valida a pressão digitada pelo usuário
+/// @param pressao recebe uma string do usuário
 bool validarPressao(const std::string& pressao);
 
 #endif

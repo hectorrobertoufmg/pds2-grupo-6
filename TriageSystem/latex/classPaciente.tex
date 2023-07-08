@@ -1,0 +1,142 @@
+\hypertarget{classPaciente}{}\doxysection{Paciente Class Reference}
+\label{classPaciente}\index{Paciente@{Paciente}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPaciente_a8320b592f7b32d2e79217608ff48ac7b}{Paciente}} (std\+::string \&\mbox{\hyperlink{classPaciente_a064d33a7ee204112a99bc3d7c5a0b5ae}{nome}}, unsigned \&idade, std\+::string \&cpf, std\+::string \&convenio)
+\begin{DoxyCompactList}\small\item\em Construtor de paciente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPaciente_a26af1c89a3bc26522d27292348599798}\label{classPaciente_a26af1c89a3bc26522d27292348599798}} 
+void \mbox{\hyperlink{classPaciente_a26af1c89a3bc26522d27292348599798}{imprimir\+\_\+paciente}} () const
+\begin{DoxyCompactList}\small\item\em Imprime as informações do paciente na tela. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPaciente_a064d33a7ee204112a99bc3d7c5a0b5ae}{nome}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o nome do paciente. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classPaciente_ab60ee09d7cc6131a7f6d974d13abe200}{prioridade}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a prioridade do paciente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaciente_af3aa583910ed5d37730873922c665070}{editar\+\_\+dados\+\_\+paciente}} (unsigned \&\mbox{\hyperlink{classPaciente_ab60ee09d7cc6131a7f6d974d13abe200}{prioridade}})
+\begin{DoxyCompactList}\small\item\em Edita a prioridade e a anamnese do paciente. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPaciente_abd05bf75f9bed7a6b31fdddb12851385}{operator==}} (const \mbox{\hyperlink{classPaciente}{Paciente}} \&paciente) const
+\begin{DoxyCompactList}\small\item\em Comparador de pacientes Retorna true caso os dois pacientes possuam o mesmo C\+PF, false caso contrário. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaciente_a208943bf1c5761b884afc3e551acddc4}{atribuir\+\_\+medico}} (std\+::string \&\mbox{\hyperlink{classPaciente_acc1f2649366e6728f13b76e55c67a87b}{medico}})
+\begin{DoxyCompactList}\small\item\em Atribui o nome de um médico ao paciente. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPaciente_acc1f2649366e6728f13b76e55c67a87b}{medico}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o nome do médico associado ao paciente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaciente_a8320b592f7b32d2e79217608ff48ac7b}\label{classPaciente_a8320b592f7b32d2e79217608ff48ac7b}} 
+\index{Paciente@{Paciente}!Paciente@{Paciente}}
+\index{Paciente@{Paciente}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{Paciente()}{Paciente()}}
+{\footnotesize\ttfamily Paciente\+::\+Paciente (\begin{DoxyParamCaption}\item[{std\+::string \&}]{nome,  }\item[{unsigned \&}]{idade,  }\item[{std\+::string \&}]{cpf,  }\item[{std\+::string \&}]{convenio }\end{DoxyParamCaption})}
+
+
+
+Construtor de paciente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do paciente. \\
+\hline
+{\em idade} & Idade do paciente. \\
+\hline
+{\em cpf} & C\+PF do paciente. \\
+\hline
+{\em convenio} & Convênio do paciente. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaciente_a208943bf1c5761b884afc3e551acddc4}\label{classPaciente_a208943bf1c5761b884afc3e551acddc4}} 
+\index{Paciente@{Paciente}!atribuir\_medico@{atribuir\_medico}}
+\index{atribuir\_medico@{atribuir\_medico}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{atribuir\_medico()}{atribuir\_medico()}}
+{\footnotesize\ttfamily void Paciente\+::atribuir\+\_\+medico (\begin{DoxyParamCaption}\item[{std\+::string \&}]{medico }\end{DoxyParamCaption})}
+
+
+
+Atribui o nome de um médico ao paciente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em medico} & O médico a ser atribuído ao paciente. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaciente_af3aa583910ed5d37730873922c665070}\label{classPaciente_af3aa583910ed5d37730873922c665070}} 
+\index{Paciente@{Paciente}!editar\_dados\_paciente@{editar\_dados\_paciente}}
+\index{editar\_dados\_paciente@{editar\_dados\_paciente}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{editar\_dados\_paciente()}{editar\_dados\_paciente()}}
+{\footnotesize\ttfamily void Paciente\+::editar\+\_\+dados\+\_\+paciente (\begin{DoxyParamCaption}\item[{unsigned \&}]{prioridade }\end{DoxyParamCaption})}
+
+
+
+Edita a prioridade e a anamnese do paciente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prioridade} & A nova prioridade do paciente. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaciente_acc1f2649366e6728f13b76e55c67a87b}\label{classPaciente_acc1f2649366e6728f13b76e55c67a87b}} 
+\index{Paciente@{Paciente}!medico@{medico}}
+\index{medico@{medico}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{medico()}{medico()}}
+{\footnotesize\ttfamily std\+::string Paciente\+::medico (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o nome do médico associado ao paciente. 
+
+\begin{DoxyReturn}{Returns}
+O nome do médico associado ao paciente. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaciente_a064d33a7ee204112a99bc3d7c5a0b5ae}\label{classPaciente_a064d33a7ee204112a99bc3d7c5a0b5ae}} 
+\index{Paciente@{Paciente}!nome@{nome}}
+\index{nome@{nome}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{nome()}{nome()}}
+{\footnotesize\ttfamily std\+::string Paciente\+::nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o nome do paciente. 
+
+\begin{DoxyReturn}{Returns}
+O nome do paciente. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaciente_abd05bf75f9bed7a6b31fdddb12851385}\label{classPaciente_abd05bf75f9bed7a6b31fdddb12851385}} 
+\index{Paciente@{Paciente}!operator==@{operator==}}
+\index{operator==@{operator==}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Paciente\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPaciente}{Paciente}} \&}]{paciente }\end{DoxyParamCaption}) const}
+
+
+
+Comparador de pacientes Retorna true caso os dois pacientes possuam o mesmo C\+PF, false caso contrário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paciente} & O paciente a ser comparado com o objeto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True caso os dois pacientes possuam o mesmo C\+PF, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaciente_ab60ee09d7cc6131a7f6d974d13abe200}\label{classPaciente_ab60ee09d7cc6131a7f6d974d13abe200}} 
+\index{Paciente@{Paciente}!prioridade@{prioridade}}
+\index{prioridade@{prioridade}!Paciente@{Paciente}}
+\doxysubsubsection{\texorpdfstring{prioridade()}{prioridade()}}
+{\footnotesize\ttfamily unsigned Paciente\+::prioridade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna a prioridade do paciente. 
+
+\begin{DoxyReturn}{Returns}
+A prioridade do paciente. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/paciente.\+hpp\item 
+src/paciente.\+cpp\end{DoxyCompactItemize}

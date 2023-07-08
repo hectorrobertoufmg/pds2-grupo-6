@@ -37,7 +37,7 @@ unsigned Paciente::prioridade() const {
 }
 
 void Paciente::editar_dados_paciente(unsigned &prioridade) {
-    _anamnese= _anamnese.coletarDadosAnamnese();
+    _anamnese = _anamnese.coletarDadosAnamnese();
     _prioridade = prioridade;
 }
 
