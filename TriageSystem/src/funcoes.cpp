@@ -129,3 +129,9 @@ std::vector<std::string> sementes_especialidades = {"Clínica Geral", "Cardiolog
     } 
  return medicos;
  }               
+
+ bool validarPressao(const std::string& pressao) {
+    std::regex pressao_regex(R"(\d{1,3}/\d{1,3})");
+
+    return std::regex_match(pressao, pressao_regex);
+}

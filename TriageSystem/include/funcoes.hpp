@@ -12,10 +12,6 @@
 
 bool tem_spam_espacos(const std::string& string);
 
-bool e_maiusculo(std::string &string);
-
-bool e_minusculo(std::string &string);
-
 /// @brief Retorna se o nome é válido ou não.
 ///
 /// Avalia se o nome contém spam de espaços ou números, o que o torna
@@ -48,5 +44,7 @@ void menu();
 void valida_opcao(bool &flag, unsigned& entrada);
 
 std::vector<Medico> gerar_bd_medicos(std::vector<Medico>&medicos);
+
+bool validarPressao(const std::string& pressao);
 
 #endif
